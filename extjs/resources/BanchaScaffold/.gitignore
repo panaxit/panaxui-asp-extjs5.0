@@ -1,7 +1,0 @@
-.DS_Store
-
-builder/config/ftp.properties
-website/
-
-tests/lib/ext-all-*
-samples/js/ext-all-*
