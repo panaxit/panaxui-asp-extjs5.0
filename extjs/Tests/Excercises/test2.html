@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Data Binding Example - Implemented with classes</title>
+    <link rel="stylesheet" type="text/css" href="../../../../resources/extjs/ext-5.0.0.736/build/examples/shared/example.css" />
+
+    <!-- GC -->
+
+
+		<link rel="stylesheet" type="text/css" href="../../../../resources/extjs/ext-5.0.0.736/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all-debug.css">
+		<script type="text/javascript" src="../../../../resources/extjs/ext-5.0.0.736/build/ext-all-debug.js"></script>
+
+    </head>
+    <body>
+        <script>
+Ext.define('KitchenSink.model.Person', {
+    extend: 'KitchenSink.model.Base',
+    fields: ['firstName', 'lastName', 'age', 'favoriteColor'],
+    statics: {
+        generateData: (function() {
+            var lasts = ['Jones', 'Smith', 'Lee', 'Wilson', 'Black', 'Williams', 'Lewis', 'Johnson', 'Foot', 'Little', 'Vee', 'Train', 'Hot', 'Mutt'],
+                firsts = ['Fred', 'Julie', 'Bill', 'Ted', 'Jack', 'John', 'Mark', 'Mike', 'Chris', 'Bob', 'Travis', 'Kelly', 'Sara'],
+                colors = ['Red', 'Green', 'Blue'];
+
+            function getRandom(array) {
+                var index = Ext.Number.randomInt(0, array.length - 1);
+                return array[index];
+            }
+
+            function getName(seen) {
+                var name = {
+                    first: getRandom(firsts),
+                    last: getRandom(lasts)
+                };
+
+                if (seen[name.first + name.last]) {
+                    return getName(seen);
+                } else {
+                    return name;
+                }
+            }
+
+            return function(total, adults, children) {
+                var out = [],
+                    seenNames = {},
+                    adultsUndef = adults === undefined,
+                    childrenUndef = children === undefined,
+                    name;
+
+                if (!adultsUndef && !childrenUndef) {
+                    total = adults + children;
+                } else {
+                    // We rely on total now
+                    total = total || 15;
+                    if (adultsUndef && childrenUndef) {
+                        adults = Ext.Number.randomInt(Math.floor(total * 0.25), Math.floor(total * 0.75));
+                        children = total - adults;
+                    } else if (adultsUndef) {
+                        adults = total - children;
+                    } else {
+                        children = total - adults;
+                    }
+                }
+
+                for (i = 0; i < total; ++i) {
+                    name = getName(seenNames);
+                    out.push({
+                        firstName: name.first,
+                        lastName: name.last,
+                        age: i >= adults ? Ext.Number.randomInt(0, 17) : Ext.Number.randomInt(18, 100),
+                        favoriteColor: getRandom(colors)
+                    });
+                }
+
+                return out;
+            };
+            })()
+    }
+});
+
+Ext.define('KitchenSink.view.binding.ChainedStoresModel', {
+    extend: 'Ext.app.ViewModel',
+    alias: 'viewmodel.binding.chainedstores',
+
+    stores: {
+        everyone: {
+            model: 'Person',
+            data: KitchenSink.model.Person.generateData(15, 10)
+        },
+        adults: {
+            source: '{everyone}',
+            filters: [{
+                property: 'age',
+                value: 18,
+                operator: '>='
+            }],
+            sorters: [{
+                property: 'age',
+                direction: 'ASC'
+            }]
+        }
+    }
+});
+
+Ext.define('KitchenSink.view.binding.ChainedStoresController', {
+    extend: 'Ext.app.ViewController',
+    alias: 'controller.binding.chainedstores',
+
+    onRemoveClick: function(btn) {
+        var rec = btn.getWidgetRecord();
+        this.getStore('everyone').remove(rec);
+    },
+
+    renderColor: function(v) {
+        return Ext.String.format('<span style="color: {0};">{1}</span>', v.toLowerCase(), v);
+    },
+
+    onEditComplete: function(editor, context) {
+        var rec = context.record,
+            store = this.getStore('adults');
+
+        if (store.contains(rec)) {
+            this.lookupReference('adultsGrid').getView().focusRow(rec);
+        }
+    }
+});
+
+/**
+ * This example demonstrates a chained store, a store that is backed by the data of another
+ * store. Sorting and filtering of the stores are independent. Removing a value in the source
+ * store removes it from the chained store. Model instances are shared, so editing the data
+ * in one store will be reflected in the other.
+ */
+Ext.define('KitchenSink.view.binding.ChainedStores', {
+    extend: 'Ext.container.Container',
+    xtype: 'binding-chained-stores',
+
+    width: 680,
+    height: 600,
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+
+    viewModel: 'binding.chainedstores',
+    controller: 'binding.chainedstores',
+
+    items: [{
+        xtype: 'grid',
+        bind: '{everyone}',
+        title: 'All People',
+        flex: 1,
+        columns: [{
+            dataIndex: 'firstName',
+            text: 'First Name',
+            flex: 1,
+            field: 'textfield'
+        }, {
+            dataIndex: 'lastName',
+            text: 'Last Name',
+            flex: 1,
+            field: 'textfield'
+        }, {
+            dataIndex: 'age',
+            text: 'Age',
+            width: 120,
+            field: 'numberfield'
+        }, {
+            dataIndex: 'favoriteColor',
+            text: 'Fav. Color',
+            flex: 1,
+            renderer: 'renderColor',
+            field: 'textfield'
+        }, {
+            xtype: 'widgetcolumn',
+            width: 110,
+            widget: {
+                xtype: 'button',
+                text: 'Remove',
+                handler: 'onRemoveClick'
+            }
+        }],
+        plugins: [{
+            ptype: 'rowediting',
+            listeners: {
+                edit: 'onEditComplete'
+            }
+        }]
+    }, {
+        xtype: 'grid',
+        bind: '{adults}',
+        flex: 1,
+        title: 'The Adults',
+        reference: 'adultsGrid',
+        margin: '10 0 0 0',
+        columns: [{
+            dataIndex: 'firstName',
+            text: 'First Name',
+            flex: 1
+        }, {
+            dataIndex: 'lastName',
+            text: 'Last Name',
+            flex: 1
+        }, {
+            dataIndex: 'age',
+            text: 'Age',
+            width: 120
+        }, {
+            dataIndex: 'favoriteColor',
+            text: 'Fav. Color',
+            flex: 1,
+            renderer: 'renderColor'
+        }]
+    }]
+});
+
+Ext.onReady(function () {
+    Ext.create('KitchenSink.view.binding.ChainedStores', {
+        renderTo: Ext.getBody(),
+        width: 400
+    });
+});
+        </script>
+    </body>
+</html>

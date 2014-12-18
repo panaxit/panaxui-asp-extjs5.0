@@ -1,0 +1,49 @@
+	.selectBox {
+ 		behavior:url('../Scripts/Behaviors/input.htc') url('../Scripts/Behaviors/selectBox.htc');
+ 		border:1px solid #7f9db9;
+		height:20px;	
+	}
+	
+	.selectBoxArrow{
+		top:2px;
+		position:relative;
+		left:-2px;
+		height:16px;
+		width:16px;
+	}	
+	.selectBoxInput{
+		border:1px;
+		height:16px;
+		position:relative;
+		top:0px;
+		left:2px;
+		font-size:10pt;
+		background-color:transparent;
+	}
+
+	.selectBoxOptionContainer{
+		position:absolute;
+		border:1px solid #7f9db9;
+		height:100px;
+		width:30px;
+		background-color:#FFF;
+		left:93px;
+		top:24px;
+		display:none;
+		overflow:auto;
+		z-index:10000;
+	}
+	.selectBoxAnOption{
+		font-family:arial;
+		font-size:12px;
+		cursor:default;
+		margin:1px;
+		overflow:hidden;
+		white-space:nowrap;
+	}
+	.selectBoxIframe{
+		position:absolute;
+		background-color:#FFF;
+		border:0px;
+		z-index:999;
+	}	

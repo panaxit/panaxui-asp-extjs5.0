@@ -1,0 +1,384 @@
+﻿<PersonaConDiscapacidad xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" xml:lang="es" session:IdUser="-1" session:profileId="[-1]" fullPath="" pageSize="1" pageIndex="1" Name="PersonaConDiscapacidad" Schema="dbo" Table_Name="PersonaConDiscapacidad" Table_Schema="dbo" Base_Type="TABLE" identityKey="Id" primaryKey="Id" supportsInsert="1" disableInsert="0" supportsUpdate="1" disableUpdate="0" supportsDelete="1" disableDelete="0" dataType="table" filtersBehavior="append" debug:displayText="7" controlType="formView" debug:controlType="127" headerText=" Persona Con Discapacidad" mode="edit">
+  <px:fields xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+    <Id fieldId="ID0E3" fieldName="Id" Column_Name="Id" isPrimaryKey="1" isIdentity="1" dataType="identity" length="10" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Id" controlType="default" />
+    <NombreEntrevistador fieldId="ID0EIB" fieldName="NombreEntrevistador" Column_Name="NombreEntrevistador" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="70" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Nombre Entrevistador" controlType="default" debug:fieldContainer="220" hidden="true" debug:hidden="221" />
+    <Matricula fieldId="ID0EYB" fieldName="Matricula" Column_Name="Matricula" isPrimaryKey="0" isIdentity="0" dataType="nchar" length="12" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Matricula" controlType="default" />
+    <Clasificacion fieldId="ID0EEC" fieldName="Clasificacion" Column_Name="Clasificacion" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="30" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Clasificacion" controlType="default" />
+    <PrimerNombre fieldId="ID0EQC" fieldName="PrimerNombre" Column_Name="PrimerNombre" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="70" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Primer Nombre" controlType="default" debug:fieldSet="140" debug:groupTabPanel="145" description="De la persona con discapacidad" debug:description="155" debug:portlet="161" debug:subGroupTabPanel="165" />
+    <SegundoNombre fieldId="ID0EGD" fieldName="SegundoNombre" Column_Name="SegundoNombre" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="50" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Segundo Nombre" controlType="default" />
+    <ApellidoPaterno fieldId="ID0ESD" fieldName="ApellidoPaterno" Column_Name="ApellidoPaterno" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="50" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Apellido Paterno" controlType="default" />
+    <ApellidoMaterno fieldId="ID0E5D" fieldName="ApellidoMaterno" Column_Name="ApellidoMaterno" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="50" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Apellido Materno" controlType="default" mode="inherit" debug:mode="190" />
+    <Sexo fieldId="ID0EME" fieldName="Sexo" Column_Name="Sexo" isPrimaryKey="0" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="10" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Sexo" controlType="radiogroup" debug:controlType="73">
+      <Genero xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0E2E" fieldName="Sexo" sortOrder="0" text="- -" dataText="RTRIM([Sexo])" dataValue="RTRIM([Sexo])" primaryKey="Sexo" headerText=" Genero" Table_Schema="dbo" Schema="dbo" Table_Name="Genero" Name="Genero" controlType="default" disableInsert="true" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+      <px:data>
+        <Genero xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0E2E" fieldName="Sexo" sortOrder="0" text="- -" />
+        <Genero xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0E2E" fieldName="Sexo" sortOrder="1" text="Femenino" value="Femenino" />
+        <Genero xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0E2E" fieldName="Sexo" sortOrder="2" text="Masculino" value="Masculino" />
+        <Genero xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0E2E" fieldName="Sexo" sortOrder="3" text="-Vacio-" value="-Vacio-" />
+      </px:data>
+    </Sexo>
+    <Apodo fieldId="ID0EIF" fieldName="Apodo" Column_Name="Apodo" isPrimaryKey="0" isIdentity="0" dataType="nchar" length="20" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Apodo" controlType="default" mode="inherit" debug:mode="79" description="Cómo le gusta que le digan? tip: Apodo" debug:description="80" />
+    <DiaNacimiento fieldId="ID0EYF" fieldName="DiaNacimiento" Column_Name="DiaNacimiento" isPrimaryKey="0" isIdentity="0" dataType="int" length="10" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Dia Nacimiento" controlType="default" debug:fieldContainer="169" />
+    <MesNacimiento fieldId="ID0EGG" fieldName="MesNacimiento" Column_Name="MesNacimiento" isPrimaryKey="0" isIdentity="0" dataType="int" length="10" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Mes Nacimiento" controlType="monthpicker" debug:controlType="168" debug:fieldContainer="170" />
+    <AnioNacimiento fieldId="ID0EWG" fieldName="AnioNacimiento" Column_Name="AnioNacimiento" isPrimaryKey="0" isIdentity="0" dataType="int" length="10" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Anio Nacimiento" debug:fieldContainer="174" controlType="yearpicker" debug:controlType="175" fieldContainer.Orientation="horizontal" debug:fieldContainer.Orientation="181" />
+    <Edad fieldId="ID0EIH" fieldName="Edad" Column_Name="Edad" isPrimaryKey="0" isIdentity="0" dataType="tinyint" length="3" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Edad" controlType="default" />
+    <Direccion fieldId="ID0ELAAC" fieldName="Direccion" Column_Name="Direccion" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="0" supportsInsert="1" supportsUpdate="1" defaultValue="('')" headerText=" Direccion" controlType="default" description="Calle y número" debug:description="116" debug:fieldSet="121" />
+    <Colonia fieldId="ID0E3AAC" fieldName="Colonia" Column_Name="Colonia" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="70" isNullable="0" supportsInsert="1" supportsUpdate="1" defaultValue="('')" headerText=" Colonia" controlType="default" />
+    <Municipio fieldId="ID0EJBAC" fieldName="Municipio" Column_Name="Municipio" isPrimaryKey="0" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="5" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Municipio" controlType="default">
+      <Municipio xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EWBAC" fieldName="Municipio" sortOrder="0" text="- -" foreignKey="fk" dataText="RTRIM([Municipio])" dataValue="RTRIM([Id])" primaryKey="Id" headerText=" Municipio" Table_Schema="CatalogosSistema" Schema="CatalogosSistema" Table_Name="Municipio" Name="Municipio" controlType="default" disableInsert="true" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append">
+        <Estado sortOrder="0" text="- -" foreignKey="fk" dataText="RTRIM([Estado])" dataValue="RTRIM([Id])" primaryKey="Id" headerText=" Estado" Table_Schema="CatalogosSistema" Schema="CatalogosSistema" Table_Name="Estado" Name="Estado" controlType="default" disableInsert="true" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append">
+          <Pais sortOrder="0" text="- -" dataText="RTRIM(Pais)" dataValue="RTRIM([Clave])" primaryKey="Clave" headerText=" Pais" Table_Schema="CatalogosSistema" Schema="CatalogosSistema" Table_Name="Pais" Name="Pais" controlType="default" disableInsert="true" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+        </Estado>
+      </Municipio>
+    </Municipio>
+    <CP fieldId="ID0EHDAC" fieldName="CP" Column_Name="CP" isPrimaryKey="0" isIdentity="0" dataType="nchar" length="5" isNullable="0" supportsInsert="1" supportsUpdate="1" defaultValue="('')" headerText=" CP" controlType="numericfield" debug:controlType="59" />
+    <TelefonoCasa fieldId="ID0EWDAC" fieldName="TelefonoCasa" Column_Name="TelefonoCasa" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="20" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Telefono Casa" debug:fieldSet="144" debug:fieldContainer="147" controlType="numericfield" debug:controlType="153" />
+    <Celular fieldId="ID0EIEAC" fieldName="Celular" Column_Name="Celular" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="20" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Celular" fieldContainer.Orientation="horizontal" debug:fieldContainer.Orientation="87" controlType="numericfield" debug:controlType="91" debug:fieldContainer="93" />
+    <Email fieldId="ID0E1EAC" fieldName="Email" Column_Name="Email" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="100" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Email" controlType="default" />
+    <NombrePadre fieldId="ID0EGFAC" fieldName="NombrePadre" Column_Name="NombrePadre" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="100" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Nombre Padre" controlType="default" />
+    <VivePadre fieldId="ID0ESFAC" fieldName="VivePadre" Column_Name="VivePadre" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Vive Padre" controlType="default" debug:fieldSet="119" />
+    <CelularPadre fieldId="ID0E6FAC" fieldName="CelularPadre" Column_Name="CelularPadre" isPrimaryKey="0" isIdentity="0" dataType="nchar" length="10" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Celular Padre" controlType="numericfield" debug:controlType="152" />
+    <TelefonoTrabajoPadre fieldId="ID0ENGAC" fieldName="TelefonoTrabajoPadre" Column_Name="TelefonoTrabajoPadre" isPrimaryKey="0" isIdentity="0" dataType="nchar" length="10" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Telefono Trabajo Padre" controlType="default" autoGenerateField="false" debug:autoGenerateField="230" debug:fieldContainer="233" />
+    <EmailPadre fieldId="ID0E4GAC" fieldName="EmailPadre" Column_Name="EmailPadre" isPrimaryKey="0" isIdentity="0" dataType="nchar" length="40" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Email Padre" controlType="default" debug:fieldContainer="126" fieldContainer.Orientation="horizontal" debug:fieldContainer.Orientation="129" />
+    <NombreMadre fieldId="ID0ENHAC" fieldName="NombreMadre" Column_Name="NombreMadre" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="100" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Nombre Madre" controlType="default" />
+    <ViveMadre fieldId="ID0EZHAC" fieldName="ViveMadre" Column_Name="ViveMadre" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Vive Madre" controlType="default" debug:fieldSet="118" />
+    <CelularMadre fieldId="ID0EGIAC" fieldName="CelularMadre" Column_Name="CelularMadre" isPrimaryKey="0" isIdentity="0" dataType="nchar" length="10" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Celular Madre" controlType="numericfield" debug:controlType="151" />
+    <TelefonoTrabajoMadre fieldId="ID0EUIAC" fieldName="TelefonoTrabajoMadre" Column_Name="TelefonoTrabajoMadre" isPrimaryKey="0" isIdentity="0" dataType="nchar" length="10" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Telefono Trabajo Madre" controlType="default" autoGenerateField="false" debug:autoGenerateField="229" debug:fieldContainer="232" />
+    <EmailMadre fieldId="ID0EEJAC" fieldName="EmailMadre" Column_Name="EmailMadre" isPrimaryKey="0" isIdentity="0" dataType="nchar" length="40" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Email Madre" controlType="default" debug:fieldContainer="125" fieldContainer.Orientation="horizontal" debug:fieldContainer.Orientation="128" />
+    <EstadoCivilPadres fieldId="ID0EUJAC" fieldName="EstadoCivilPadres" Column_Name="EstadoCivilPadres" isPrimaryKey="0" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="15" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Estado Civil Padres" controlType="default" debug:fieldSet="202">
+      <EstadoCivil xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EDKAC" fieldName="EstadoCivilPadres" sortOrder="0" text="- -" dataText="RTRIM([EstadoCivil])" dataValue="RTRIM([EstadoCivil])" primaryKey="EstadoCivil" headerText=" Estado Civil" Table_Schema="dbo" Schema="dbo" Table_Name="EstadoCivil" Name="EstadoCivil" controlType="default" disableInsert="true" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+    </EstadoCivilPadres>
+    <ConQuienVive fieldId="ID0EQKAC" fieldName="ConQuienVive" Column_Name="ConQuienVive" isPrimaryKey="0" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="15" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Con Quien Vive" controlType="default">
+      <TipoRelacion xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0E4KAC" fieldName="ConQuienVive" sortOrder="0" text="- -" dataText="RTRIM([Nombre])" dataValue="RTRIM([Nombre])" primaryKey="Nombre" headerText=" Tipo Relacion" Table_Schema="dbo" Schema="dbo" Table_Name="TipoRelacion" Name="TipoRelacion" controlType="default" disableInsert="true" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+    </ConQuienVive>
+    <NombreConQuienVive fieldId="ID0EKLAC" fieldName="NombreConQuienVive" Column_Name="NombreConQuienVive" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="255" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Nombre Con Quien Vive" controlType="default" />
+    <DireccionConQuienVive fieldId="ID0EWLAC" fieldName="DireccionConQuienVive" Column_Name="DireccionConQuienVive" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Direccion Con Quien Vive" controlType="default" />
+    <TelefonoConQuienVive fieldId="ID0ECMAC" fieldName="TelefonoConQuienVive" Column_Name="TelefonoConQuienVive" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="20" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Telefono Con Quien Vive" controlType="default" />
+    <CelularConQuienVive fieldId="ID0EOMAC" fieldName="CelularConQuienVive" Column_Name="CelularConQuienVive" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="20" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Celular Con Quien Vive" controlType="default" />
+    <ParentescoConQuienVive fieldId="ID0E1MAC" fieldName="ParentescoConQuienVive" Column_Name="ParentescoConQuienVive" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="20" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Parentesco Con Quien Vive" controlType="default" />
+    <ConcatoEmergencias fieldId="ID0EGNAC" fieldName="ConcatoEmergencias" Column_Name="ConcatoEmergencias" isPrimaryKey="0" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="15" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Concato Emergencias" controlType="default">
+      <TipoRelacion xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0ETNAC" fieldName="ConcatoEmergencias" sortOrder="0" text="- -" dataText="RTRIM([Nombre])" dataValue="RTRIM([Nombre])" primaryKey="Nombre" headerText=" Tipo Relacion" Table_Schema="dbo" Schema="dbo" Table_Name="TipoRelacion" Name="TipoRelacion" controlType="default" disableInsert="true" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+    </ConcatoEmergencias>
+    <NombreConcatoEmergencias fieldId="ID0EAOAC" fieldName="NombreConcatoEmergencias" Column_Name="NombreConcatoEmergencias" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="255" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Nombre Concato Emergencias" controlType="default" />
+    <DireccionConcatoEmergencias fieldId="ID0EMOAC" fieldName="DireccionConcatoEmergencias" Column_Name="DireccionConcatoEmergencias" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Direccion Concato Emergencias" controlType="default" />
+    <TelefonoConcatoEmergencias fieldId="ID0EYOAC" fieldName="TelefonoConcatoEmergencias" Column_Name="TelefonoConcatoEmergencias" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="20" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Telefono Concato Emergencias" controlType="default" />
+    <CelularConcatoEmergencias fieldId="ID0EEPAC" fieldName="CelularConcatoEmergencias" Column_Name="CelularConcatoEmergencias" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="20" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Celular Concato Emergencias" controlType="default" />
+    <ParentescoConcatoEmergencias fieldId="ID0EQPAC" fieldName="ParentescoConcatoEmergencias" Column_Name="ParentescoConcatoEmergencias" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="20" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Parentesco Concato Emergencias" controlType="default" />
+    <HospitalRecomendado fieldId="ID0E3PAC" fieldName="HospitalRecomendado" Column_Name="HospitalRecomendado" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="255" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Hospital Recomendado" controlType="default" />
+    <TieneSeguroGastosMedicos fieldId="ID0EJAAE" fieldName="TieneSeguroGastosMedicos" Column_Name="TieneSeguroGastosMedicos" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Tiene Seguro Gastos Medicos" controlType="default" debug:fieldContainer="250" />
+    <Aseguradora fieldId="ID0EWAAE" fieldName="Aseguradora" Column_Name="Aseguradora" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="200" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Aseguradora" controlType="default" debug:fieldContainer="136" />
+    <NumeroPoliza fieldId="ID0EEBAE" fieldName="NumeroPoliza" Column_Name="NumeroPoliza" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="30" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Numero Poliza" controlType="default" debug:fieldContainer="146" />
+    <Discapacidades fieldId="ID0ECKBG" fieldName="Discapacidades" Column_Name="Discapacidades" dataType="junctionTable" relationshipType="hasMany" foreignSchema="dbo" foreignTable="Discapacidades" foreignReference="PcD" headerText=" Discapacidades" controlType="default" debug:subGroupTabPanel="179" scaffold="true" debug:scaffold="182" debug:moveAfter="183">
+      <Discapacidades xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" xml:lang="es" session:IdUser="-1" session:profileId="[-1]" fullPath="" pageSize="0" pageIndex="1" foreignReference="PcD" Name="Discapacidades" Schema="dbo" Table_Name="Discapacidades" Table_Schema="dbo" Base_Type="TABLE" identityKey="Id" primaryKey="PcD,Discapacidad" supportsInsert="1" disableInsert="0" supportsUpdate="1" disableUpdate="0" supportsDelete="1" disableDelete="0" dataType="table" controlType="gridView" filtersBehavior="append" headerText=" Discapacidades" mode="edit">
+        <px:fields xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+          <Id fieldId="ID0EILBG" fieldName="Id" Column_Name="Id" isPrimaryKey="0" isIdentity="1" dataType="identity" length="10" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Id" controlType="default" />
+          <Discapacidad fieldId="ID0ENMBG" fieldName="Discapacidad" Column_Name="Discapacidad" isPrimaryKey="1" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="10" isNullable="0" supportsInsert="1" supportsUpdate="1" scaffold="true" headerText=" Discapacidad" controlType="default">
+            <Discapacidad xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0E2MBG" fieldName="Discapacidad" sortOrder="0" text="- -" foreignKey="IdCategoria" referencesItself="true" dataText="RTRIM([Discapacidad])" dataValue="RTRIM([Id])" primaryKey="Id" headerText=" Discapacidad" Table_Schema="dbo" Schema="dbo" Table_Name="Discapacidad" Name="Discapacidad" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+          </Discapacidad>
+          <Notas fieldId="ID0ELOBG" fieldName="Notas" Column_Name="Notas" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="255" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Notas" controlType="default" />
+        </px:fields>
+        <px:layout xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+          <px:field fieldId="ID0ENMBG" fieldName="Discapacidad" />
+          <px:field fieldId="ID0ELOBG" fieldName="Notas" />
+        </px:layout>
+      </Discapacidades>
+    </Discapacidades>
+    <TieneSeguroSocial fieldId="ID0ESBAE" fieldName="TieneSeguroSocial" Column_Name="TieneSeguroSocial" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Tiene Seguro Social" controlType="default" />
+    <InstitutoSeguridadSocial fieldId="ID0E4BAE" fieldName="InstitutoSeguridadSocial" Column_Name="InstitutoSeguridadSocial" isPrimaryKey="0" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="10" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Instituto Seguridad Social" controlType="default">
+      <InstitutoSeguridadSocial xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EKCAE" fieldName="InstitutoSeguridadSocial" sortOrder="0" text="- -" dataText="RTRIM([Instituto])" dataValue="RTRIM([Id])" primaryKey="Id" headerText=" Instituto Seguridad Social" Table_Schema="dbo" Schema="dbo" Table_Name="InstitutoSeguridadSocial" Name="InstitutoSeguridadSocial" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+    </InstitutoSeguridadSocial>
+    <NumeroAfiliacion fieldId="ID0EWCAE" fieldName="NumeroAfiliacion" Column_Name="NumeroAfiliacion" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="30" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Numero Afiliacion" controlType="default" />
+    <NombreMedicoCabecera fieldId="ID0ECDAE" fieldName="NombreMedicoCabecera" Column_Name="NombreMedicoCabecera" isPrimaryKey="0" isIdentity="0" dataType="nchar" length="150" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Nombre Medico Cabecera" controlType="default" description="(en caso de tenerlo)" debug:description="226" />
+    <TelefonoMedico fieldId="ID0EQDAE" fieldName="TelefonoMedico" Column_Name="TelefonoMedico" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="25" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Telefono Medico" controlType="default" description="Teléfono o celular" debug:description="178" />
+    <UtilizaAparatos fieldId="ID0E5DAE" fieldName="UtilizaAparatos" Column_Name="UtilizaAparatos" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Utiliza Aparatos" controlType="default" debug:fieldContainer="189" />
+    <UtilizaAparatosComentarios fieldId="ID0EGFAE" fieldName="UtilizaAparatosComentarios" Column_Name="UtilizaAparatosComentarios" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Utiliza Aparatos Comentarios" controlType="default" debug:fieldContainer="258" />
+    <AparatosQueUtiliza fieldId="ID0EXOBG" fieldName="AparatosQueUtiliza" Column_Name="AparatosQueUtiliza" dataType="junctionTable" relationshipType="hasMany" foreignSchema="dbo" foreignTable="AparatosQueUtiliza" foreignReference="PcD" headerText=" Aparatos Que Utiliza" controlType="default" scaffold="true" debug:scaffold="207" debug:moveAfter="210" debug:fieldContainer="218">
+      <AparatosQueUtiliza xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" xml:lang="es" session:IdUser="-1" session:profileId="[-1]" fullPath="" pageSize="0" pageIndex="1" foreignReference="PcD" Name="AparatosQueUtiliza" Schema="dbo" Table_Name="AparatosQueUtiliza" Table_Schema="dbo" Base_Type="TABLE" identityKey="Id" primaryKey="PcD,Aparato" supportsInsert="1" disableInsert="0" supportsUpdate="1" disableUpdate="0" supportsDelete="1" disableDelete="0" dataType="table" controlType="gridView" filtersBehavior="append" headerText=" Aparatos Que Utiliza" mode="edit">
+        <px:fields xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+          <Id fieldId="ID0E4PBG" fieldName="Id" Column_Name="Id" isPrimaryKey="0" isIdentity="1" dataType="identity" length="10" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Id" controlType="default" />
+          <Aparato fieldId="ID0ECRBG" fieldName="Aparato" Column_Name="Aparato" isPrimaryKey="1" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="10" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Aparato" controlType="default" description="Si se transporta en silla de ruedas, usa bastón u otros. Puedes seleccionar varios" debug:description="66">
+            <Aparato xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0ERRBG" fieldName="Aparato" sortOrder="0" text="- -" dataText="RTRIM([Aparato])" dataValue="RTRIM([Id])" primaryKey="Id" headerText=" Aparato" Table_Schema="dbo" Schema="dbo" Table_Name="Aparato" Name="Aparato" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+          </Aparato>
+        </px:fields>
+        <px:layout xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+          <px:field fieldId="ID0ECRBG" fieldName="Aparato" />
+        </px:layout>
+      </AparatosQueUtiliza>
+    </AparatosQueUtiliza>
+    <UtilizaOtroAparato fieldId="ID0ELEAE" fieldName="UtilizaOtroAparato" Column_Name="UtilizaOtroAparato" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Utiliza Otro Aparato" controlType="default" debug:fieldContainer="214" />
+    <OtroAparato fieldId="ID0EYEAE" fieldName="OtroAparato" Column_Name="OtroAparato" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="50" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Otro Aparato" controlType="default" debug:fieldContainer="138" />
+    <OrigenUsoAparato fieldId="ID0EUFAE" fieldName="OrigenUsoAparato" Column_Name="OrigenUsoAparato" isPrimaryKey="0" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="10" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Origen Uso Aparato" controlType="default">
+      <OrigenUsoAparato xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EBGAE" fieldName="OrigenUsoAparato" sortOrder="0" text="- -" dataText="RTRIM([Origen])" dataValue="RTRIM([Id])" primaryKey="Id" headerText=" Origen Uso Aparato" Table_Schema="dbo" Schema="dbo" Table_Name="OrigenUsoAparato" Name="OrigenUsoAparato" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+    </OrigenUsoAparato>
+    <EdadAdquirida fieldId="ID0ENGAE" fieldName="EdadAdquirida" Column_Name="EdadAdquirida" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="20" isNullable="1" supportsInsert="1" supportsUpdate="1" defaultValue="((0))" headerText=" Edad Adquirida" controlType="default" maxValue="99" debug:maxValue="172" />
+    <ReaccionFamiliaAnteDiscapacidad fieldId="ID0E3GAE" fieldName="ReaccionFamiliaAnteDiscapacidad" Column_Name="ReaccionFamiliaAnteDiscapacidad" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Reaccion Familia Ante Discapacidad" controlType="default" />
+    <Tratamiento fieldId="ID0EIHAE" fieldName="Tratamiento" Column_Name="Tratamiento" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Tratamiento" controlType="default" />
+    <HechosImportantes fieldId="ID0EUHAE" fieldName="HechosImportantes" Column_Name="HechosImportantes" isPrimaryKey="0" isIdentity="0" dataType="nchar" length="10" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Hechos Importantes" controlType="default" description="Hechos importantes desde el nacimiento hasta la actualidad" debug:description="203" />
+    <TipoSangre fieldId="ID0ECIAE" fieldName="TipoSangre" Column_Name="TipoSangre" isPrimaryKey="0" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="3" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Tipo Sangre" controlType="default" debug:portlet="131" debug:fieldSet="133">
+      <TipoSangre xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0ETIAE" fieldName="TipoSangre" sortOrder="0" text="- -" dataText="RTRIM([TipoSangre])" dataValue="RTRIM([TipoSangre])" primaryKey="TipoSangre" headerText=" Tipo Sangre" Table_Schema="dbo" Schema="dbo" Table_Name="TipoSangre" Name="TipoSangre" controlType="default" disableInsert="true" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+    </TipoSangre>
+    <PresentaConvulsiones fieldId="ID0EAJAE" fieldName="PresentaConvulsiones" Column_Name="PresentaConvulsiones" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Presenta Convulsiones" controlType="default" />
+    <SugerenciasCaracteristicasConvulsiones fieldId="ID0ELJAE" fieldName="SugerenciasCaracteristicasConvulsiones" Column_Name="SugerenciasCaracteristicasConvulsiones" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Sugerencias Caracteristicas Convulsiones" controlType="default" />
+    <PermiteQueDecidaParamedico fieldId="ID0EXJAE" fieldName="PermiteQueDecidaParamedico" Column_Name="PermiteQueDecidaParamedico" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Permite Que Decida Paramedico" controlType="default" description="En características previas a la convulsión:   Que hace o debemos notar si estuviera a punto de tener convulsiones." debug:description="256" />
+    <PadeceTic fieldId="ID0EEKAE" fieldName="PadeceTic" Column_Name="PadeceTic" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Padece Tic" controlType="default" description="¿padece algún tic o movimiento físico en especial?" debug:description="115" />
+    <TicsQuePadece fieldId="ID0ERKAE" fieldName="TicsQuePadece" Column_Name="TicsQuePadece" isPrimaryKey="0" isIdentity="0" dataType="nchar" length="10" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Tics Que Padece" controlType="default" description="¿ cuál y que ocasiones lo presenta?" debug:description="167" />
+    <HaPresentadoCrisisNerviosa fieldId="ID0E6KAE" fieldName="HaPresentadoCrisisNerviosa" Column_Name="HaPresentadoCrisisNerviosa" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Ha Presentado Crisis Nerviosa" controlType="default" description="¿ha presentado algún tipo de crisis nerviosa, ansiedad o hiperactividad?" debug:description="257" />
+    <RecomendacionCalmarCrisis fieldId="ID0EMLAE" fieldName="RecomendacionCalmarCrisis" Column_Name="RecomendacionCalmarCrisis" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Recomendacion Calmar Crisis" controlType="default" debug:fieldContainer="251" description="¿hay alguna recomendación para calmarlo?" debug:description="255" />
+    <EstaBajoTratamiento fieldId="ID0E3LAE" fieldName="EstaBajoTratamiento" Column_Name="EstaBajoTratamiento" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Esta Bajo Tratamiento" controlType="default" />
+    <PresentaAlergias fieldId="ID0EHMAE" fieldName="PresentaAlergias" Column_Name="PresentaAlergias" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Presenta Alergias" controlType="default" />
+    <ComentariosAlergias fieldId="ID0EINAE" fieldName="ComentariosAlergias" Column_Name="ComentariosAlergias" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Comentarios Alergias" controlType="default" />
+    <RestriccionActividad fieldId="ID0EUNAE" fieldName="RestriccionActividad" Column_Name="RestriccionActividad" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Restriccion Actividad" controlType="default" />
+    <RestriccionesActividadCausaMedica fieldId="ID0E6NAE" fieldName="RestriccionesActividadCausaMedica" Column_Name="RestriccionesActividadCausaMedica" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Restricciones Actividad Causa Medica" controlType="default" />
+    <PuedeParticiparActividadesAlberca fieldId="ID0ELOAE" fieldName="PuedeParticiparActividadesAlberca" Column_Name="PuedeParticiparActividadesAlberca" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Puede Participar Actividades Alberca" controlType="default" />
+    <PuedeSubirseAlTobogan fieldId="ID0EWOAE" fieldName="PuedeSubirseAlTobogan" Column_Name="PuedeSubirseAlTobogan" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Puede Subirse Al Tobogan" controlType="default" />
+    <SabeNadar fieldId="ID0EBPAE" fieldName="SabeNadar" Column_Name="SabeNadar" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Sabe Nadar" controlType="default" />
+    <ComentariosParaNadar fieldId="ID0EMPAE" fieldName="ComentariosParaNadar" Column_Name="ComentariosParaNadar" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Comentarios Para Nadar" controlType="default" debug:fieldContainer="227" />
+    <PracticaDeportes fieldId="ID0E1PAE" fieldName="PracticaDeportes" Column_Name="PracticaDeportes" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Practica Deportes" controlType="default" />
+    <DeporteQuePractica fieldId="ID0EFQAE" fieldName="DeporteQuePractica" Column_Name="DeporteQuePractica" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="255" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Deporte Que Practica" controlType="default" />
+    <FrecuenciaQuePractica fieldId="ID0ERQAE" fieldName="FrecuenciaQuePractica" Column_Name="FrecuenciaQuePractica" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="255" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Frecuencia Que Practica" controlType="default" />
+    <ControlEsfinteres fieldId="ID0E4QAE" fieldName="ControlEsfinteres" Column_Name="ControlEsfinteres" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Control Esfinteres" controlType="default" />
+    <UsaPañal fieldId="ID0EIRAE" fieldName="UsaPañal" Column_Name="UsaPañal" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Usa Pañal" controlType="default" />
+    <ComentariosPañal fieldId="ID0ETRAE" fieldName="ComentariosPañal" Column_Name="ComentariosPañal" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Comentarios Pañal" controlType="default" />
+    <CaracteristicasGenerales fieldId="ID0E6RAE" fieldName="CaracteristicasGenerales" Column_Name="CaracteristicasGenerales" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Caracteristicas Generales" controlType="default" />
+    <ComentariosGenerales fieldId="ID0ELSAE" fieldName="ComentariosGenerales" Column_Name="ComentariosGenerales" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Comentarios Generales" controlType="default" />
+    <PuntosOtorgadosLugarResidencia fieldId="ID0EXSAE" fieldName="PuntosOtorgadosLugarResidencia" Column_Name="PuntosOtorgadosLugarResidencia" isPrimaryKey="0" isIdentity="0" dataType="tinyint" length="3" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Puntos Otorgados Lugar Residencia" controlType="default" />
+    <PuntosOtorgadosEstadoSaludFamiliar fieldId="ID0EDTAE" fieldName="PuntosOtorgadosEstadoSaludFamiliar" Column_Name="PuntosOtorgadosEstadoSaludFamiliar" isPrimaryKey="0" isIdentity="0" dataType="tinyint" length="3" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Puntos Otorgados Estado Salud Familiar" controlType="default" />
+    <PuntosOtorgadosSalariosXDependientes fieldId="ID0EPTAE" fieldName="PuntosOtorgadosSalariosXDependientes" Column_Name="PuntosOtorgadosSalariosXDependientes" isPrimaryKey="0" isIdentity="0" dataType="tinyint" length="3" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Puntos Otorgados Salarios X Dependientes" controlType="default" />
+    <PuntosOtorgadosVivienda fieldId="ID0E2TAE" fieldName="PuntosOtorgadosVivienda" Column_Name="PuntosOtorgadosVivienda" isPrimaryKey="0" isIdentity="0" dataType="tinyint" length="3" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Puntos Otorgados Vivienda" controlType="default" />
+    <IngresoFamiliar fieldId="ID0EHUAE" fieldName="IngresoFamiliar" Column_Name="IngresoFamiliar" dataType="junctionTable" relationshipType="hasMany" foreignSchema="PcD" foreignTable="IngresoFamiliar" foreignReference="IdPcD" headerText=" Ingreso Familiar" controlType="default">
+      <IngresoFamiliar xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" xml:lang="es" session:IdUser="-1" session:profileId="[-1]" fullPath="" pageSize="0" pageIndex="1" foreignReference="IdPcD" Name="IngresoFamiliar" Schema="PcD" Table_Name="IngresoFamiliar" Table_Schema="PcD" Base_Type="TABLE" identityKey="Id" primaryKey="IdPcD,Concepto" supportsInsert="1" disableInsert="0" supportsUpdate="1" disableUpdate="0" supportsDelete="1" disableDelete="0" dataType="table" controlType="gridView" filtersBehavior="append" headerText=" Pc D -  Ingreso Familiar" mode="edit">
+        <px:fields xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+          <Id fieldId="ID0EHVAE" fieldName="Id" Column_Name="Id" isPrimaryKey="0" isIdentity="1" dataType="identity" length="10" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Id" controlType="default" />
+          <Concepto fieldId="ID0EMWAE" fieldName="Concepto" Column_Name="Concepto" isPrimaryKey="1" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="10" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Concepto" controlType="default">
+            <ConceptoIngresoFamiliar xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EZWAE" fieldName="Concepto" sortOrder="0" text="- -" dataText="RTRIM([Concepto])" dataValue="RTRIM([Id])" primaryKey="Id" headerText=" Concepto Ingreso Familiar" Table_Schema="CatalogosSistema" Schema="CatalogosSistema" Table_Name="ConceptoIngresoFamiliar" Name="ConceptoIngresoFamiliar" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+          </Concepto>
+          <Monto fieldId="ID0EFXAE" fieldName="Monto" Column_Name="Monto" isPrimaryKey="0" isIdentity="0" dataType="money" length="15" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Monto" controlType="default" />
+        </px:fields>
+        <px:layout xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+          <px:field fieldId="ID0EMWAE" fieldName="Concepto" />
+          <px:field fieldId="ID0EFXAE" fieldName="Monto" />
+        </px:layout>
+      </IngresoFamiliar>
+    </IngresoFamiliar>
+    <SaludFamiliar fieldId="ID0ERXAE" fieldName="SaludFamiliar" Column_Name="SaludFamiliar" dataType="junctionTable" relationshipType="hasMany" foreignSchema="PcD" foreignTable="SaludFamiliar" foreignReference="IdPcD" headerText=" Salud Familiar" controlType="default">
+      <SaludFamiliar xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" xml:lang="es" session:IdUser="-1" session:profileId="[-1]" fullPath="" pageSize="0" pageIndex="1" foreignReference="IdPcD" Name="SaludFamiliar" Schema="PcD" Table_Name="SaludFamiliar" Table_Schema="PcD" Base_Type="TABLE" identityKey="Id" primaryKey="IdPcD,PuntosPersonas" supportsInsert="1" disableInsert="0" supportsUpdate="1" disableUpdate="0" supportsDelete="1" disableDelete="0" dataType="table" controlType="gridView" filtersBehavior="append" headerText=" Pc D -  Salud Familiar" mode="edit">
+        <px:fields xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+          <Id fieldId="ID0ERYAE" fieldName="Id" Column_Name="Id" isPrimaryKey="0" isIdentity="1" dataType="identity" length="10" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Id" controlType="default" />
+          <PuntosPersonas fieldId="ID0EWZAE" fieldName="PuntosPersonas" Column_Name="PuntosPersonas" isPrimaryKey="1" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="3" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Puntos Personas" controlType="default">
+            <PersonasEnCasaEnTratamiento xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0ED1AE" fieldName="PuntosPersonas" sortOrder="0" text="- -" dataText="RTRIM([Puntos])" dataValue="RTRIM([Puntos])" primaryKey="Puntos" headerText=" Personas En Casa En Tratamiento" Table_Schema="CatalogosSistema" Schema="CatalogosSistema" Table_Name="PersonasEnCasaEnTratamiento" Name="PersonasEnCasaEnTratamiento" controlType="default" disableInsert="true" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+          </PuntosPersonas>
+        </px:fields>
+        <px:layout xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+          <px:field fieldId="ID0EWZAE" fieldName="PuntosPersonas" />
+        </px:layout>
+      </SaludFamiliar>
+    </SaludFamiliar>
+    <TipoComunidad fieldId="ID0EQ1AE" fieldName="TipoComunidad" Column_Name="TipoComunidad" dataType="junctionTable" relationshipType="hasOne" foreignSchema="PcD" foreignTable="TipoComunidad" foreignReference="IdPcD" headerText=" Tipo Comunidad" controlType="default">
+      <TipoComunidad xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" xml:lang="es" session:IdUser="-1" session:profileId="[-1]" fullPath="" pageSize="0" pageIndex="1" foreignReference="IdPcD" Name="TipoComunidad" Schema="PcD" Table_Name="TipoComunidad" Table_Schema="PcD" Base_Type="TABLE" identityKey="Id" primaryKey="IdPcD,PuntosTipoComunidad" supportsInsert="1" disableInsert="0" supportsUpdate="1" disableUpdate="0" supportsDelete="1" disableDelete="0" dataType="table" controlType="formView" filtersBehavior="append" headerText=" Pc D -  Tipo Comunidad" mode="edit">
+        <px:fields xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+          <Id fieldId="ID0EQ2AE" fieldName="Id" Column_Name="Id" isPrimaryKey="0" isIdentity="1" dataType="identity" length="10" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Id" controlType="default" />
+          <PuntosTipoComunidad fieldId="ID0EV3AE" fieldName="PuntosTipoComunidad" Column_Name="PuntosTipoComunidad" isPrimaryKey="1" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="3" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Puntos Tipo Comunidad" controlType="default">
+            <TipoComunidad xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EC4AE" fieldName="PuntosTipoComunidad" sortOrder="0" text="- -" dataText="RTRIM([Puntos])" dataValue="RTRIM([Puntos])" primaryKey="Puntos" headerText=" Tipo Comunidad" Table_Schema="CatalogosSistema" Schema="CatalogosSistema" Table_Name="TipoComunidad" Name="TipoComunidad" controlType="default" disableInsert="true" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+          </PuntosTipoComunidad>
+        </px:fields>
+        <px:layout xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+          <px:field fieldId="ID0EV3AE" fieldName="PuntosTipoComunidad" />
+        </px:layout>
+      </TipoComunidad>
+    </TipoComunidad>
+    <AreaGeografica fieldId="ID0EP4AE" fieldName="AreaGeografica" Column_Name="AreaGeografica" dataType="junctionTable" relationshipType="hasOne" foreignSchema="PcD" foreignTable="AreaGeografica" foreignReference="IdPcD" headerText=" Area Geografica" controlType="default">
+      <AreaGeografica xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" xml:lang="es" session:IdUser="-1" session:profileId="[-1]" fullPath="" pageSize="0" pageIndex="1" foreignReference="IdPcD" Name="AreaGeografica" Schema="PcD" Table_Name="AreaGeografica" Table_Schema="PcD" Base_Type="TABLE" identityKey="Id" primaryKey="IdPcD,PuntosAreaGeografica" supportsInsert="1" disableInsert="0" supportsUpdate="1" disableUpdate="0" supportsDelete="1" disableDelete="0" dataType="table" controlType="formView" filtersBehavior="append" headerText=" Pc D -  Area Geografica" mode="edit">
+        <px:fields xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+          <Id fieldId="ID0EO5AE" fieldName="Id" Column_Name="Id" isPrimaryKey="0" isIdentity="0" dataType="int" length="10" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Id" controlType="default" />
+          <PuntosAreaGeografica fieldId="ID0ET6AE" fieldName="PuntosAreaGeografica" Column_Name="PuntosAreaGeografica" isPrimaryKey="1" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="3" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Puntos Area Geografica" controlType="default">
+            <AreaGeografica xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EBAAG" fieldName="PuntosAreaGeografica" sortOrder="0" text="- -" dataText="RTRIM([Puntos])" dataValue="RTRIM([Puntos])" primaryKey="Puntos" headerText=" Area Geografica" Table_Schema="CatalogosSistema" Schema="CatalogosSistema" Table_Name="AreaGeografica" Name="AreaGeografica" controlType="default" disableInsert="true" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+          </PuntosAreaGeografica>
+        </px:fields>
+        <px:layout xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+          <px:field fieldId="ID0EO5AE" fieldName="Id" />
+          <px:field fieldId="ID0ET6AE" fieldName="PuntosAreaGeografica" />
+        </px:layout>
+      </AreaGeografica>
+    </AreaGeografica>
+    <Inscripciones fieldId="ID0EOAAG" fieldName="Inscripciones" Column_Name="Inscripciones" dataType="junctionTable" relationshipType="hasMany" foreignSchema="EventosPcD" foreignTable="Inscripciones" foreignReference="IdPcD" headerText=" Inscripciones" controlType="default">
+      <Inscripciones xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" xml:lang="es" session:IdUser="-1" session:profileId="[-1]" fullPath="" pageSize="0" pageIndex="1" foreignReference="IdPcD" Name="Inscripciones" Schema="EventosPcD" Table_Name="Inscripciones" Table_Schema="EventosPcD" Base_Type="TABLE" identityKey="Id" primaryKey="IdEvento,IdPcD" supportsInsert="1" disableInsert="0" supportsUpdate="1" disableUpdate="0" supportsDelete="1" disableDelete="0" dataType="table" controlType="gridView" filtersBehavior="append" headerText=" Eventos Pc D -  Inscripciones" mode="edit">
+        <px:fields xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+          <Id fieldId="ID0EOBAG" fieldName="Id" Column_Name="Id" isPrimaryKey="0" isIdentity="1" dataType="identity" length="10" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Id" controlType="default" />
+          <IdEvento fieldId="ID0E1BAG" fieldName="IdEvento" Column_Name="IdEvento" isPrimaryKey="1" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="10" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Evento" controlType="default">
+            <Configuracion xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0EHCAG" fieldName="IdEvento" sortOrder="0" text="- -" foreignKey="IdEvento" dataText="RTRIM([NumeroDeSesiones])" dataValue="RTRIM([IdEvento])" primaryKey="IdEvento" headerText=" Configuracion" Table_Schema="EventosPcD" Schema="EventosPcD" Table_Name="Configuracion" Name="Configuracion" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append">
+              <Evento sortOrder="0" text="- -" foreignKey="TipoDeEvento" dataText="RTRIM([NombreEvento])" dataValue="RTRIM([Id])" primaryKey="Id" headerText=" Evento" Table_Schema="Eventos" Schema="Eventos" Table_Name="Evento" Name="Evento" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append">
+                <TipoEvento sortOrder="0" text="- -" dataText="RTRIM([TipoEvento])" dataValue="RTRIM([Id])" primaryKey="Id" headerText=" Tipo Evento" Table_Schema="Eventos" Schema="Eventos" Table_Name="TipoEvento" Name="TipoEvento" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+              </Evento>
+            </Configuracion>
+          </IdEvento>
+          <Grupo fieldId="ID0ENTAG" fieldName="Grupo" Column_Name="Grupo" isPrimaryKey="0" isIdentity="0" dataType="foreignKey" relationshipType="belongsTo" length="10" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Grupo" controlType="default">
+            <GruposActivos xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax" fieldId="ID0E1TAG" fieldName="Grupo" sortOrder="0" text="- -" dataText="RTRIM([NombreGrupo])" dataValue="RTRIM([IdGrupo])" primaryKey="IdGrupo" headerText=" Grupos Activos" Table_Schema="EventosPcD" Schema="EventosPcD" Table_Name="GruposActivos" Name="GruposActivos" controlType="default" supportsInsert="1" supportsUpdate="1" supportsDelete="1" filtersBehavior="append" />
+          </Grupo>
+          <PorcentajeBeca fieldId="ID0EN3AG" fieldName="PorcentajeBeca" Column_Name="PorcentajeBeca" isPrimaryKey="0" isIdentity="0" dataType="decimal" length="16" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Porcentaje Beca" controlType="default" />
+          <TotalAPagar fieldId="ID0EZ3AG" fieldName="TotalAPagar" Column_Name="TotalAPagar" isPrimaryKey="0" isIdentity="0" dataType="money" length="15" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Total A Pagar" controlType="default" />
+          <Adeudo fieldId="ID0EF4AG" fieldName="Adeudo" Column_Name="Adeudo" isPrimaryKey="0" isIdentity="0" dataType="money" length="15" isNullable="0" supportsInsert="1" supportsUpdate="1" headerText=" Adeudo" controlType="default" />
+          <Observaciones fieldId="ID0ER4AG" fieldName="Observaciones" Column_Name="Observaciones" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Observaciones" controlType="default" />
+          <Acompañante fieldId="ID0E44AG" fieldName="Acompañante" Column_Name="Acompañante" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Acompañante" controlType="default" />
+          <Transporte fieldId="ID0EJ5AG" fieldName="Transporte" Column_Name="Transporte" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="70" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Transporte" controlType="default" />
+          <Baja fieldId="ID0EV5AG" fieldName="Baja" Column_Name="Baja" isPrimaryKey="0" isIdentity="0" dataType="bit" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Baja" controlType="default" description="/*{fieldcontainer:&quot;Baja&quot;}*/" debug:description="51" />
+          <MotivoBaja fieldId="ID0EC6AG" fieldName="MotivoBaja" Column_Name="MotivoBaja" isPrimaryKey="0" isIdentity="0" dataType="nvarchar" length="4000" isNullable="1" supportsInsert="1" supportsUpdate="1" headerText=" Motivo Baja" controlType="default" description="/*{fieldcontainer:&quot;Baja&quot;}*/" debug:description="104" />
+        </px:fields>
+        <px:layout xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+          <px:field fieldId="ID0E1BAG" fieldName="IdEvento" />
+          <px:field fieldId="ID0ENTAG" fieldName="Grupo" />
+          <px:field fieldId="ID0EN3AG" fieldName="PorcentajeBeca" />
+          <px:field fieldId="ID0EZ3AG" fieldName="TotalAPagar" />
+          <px:field fieldId="ID0EF4AG" fieldName="Adeudo" />
+          <px:field fieldId="ID0ER4AG" fieldName="Observaciones" />
+          <px:field fieldId="ID0E44AG" fieldName="Acompañante" />
+          <px:field fieldId="ID0EJ5AG" fieldName="Transporte" />
+          <px:field fieldId="ID0EV5AG" fieldName="Baja" />
+          <px:field fieldId="ID0EC6AG" fieldName="MotivoBaja" />
+        </px:layout>
+      </Inscripciones>
+    </Inscripciones>
+  </px:fields>
+  <px:layout xmlns:extjs="urn:extjs" xmlns:debug="urn:debug" xmlns:custom="urn:custom" xmlns:session="urn:session" xmlns:px="urn:panax">
+    <px:fieldContainer name="ProporcionanteDatos">
+      <px:field fieldId="ID0EIB" fieldName="NombreEntrevistador" />
+    </px:fieldContainer>
+    <px:field fieldId="ID0EYB" fieldName="Matricula" />
+    <px:field fieldId="ID0EEC" fieldName="Clasificacion" />
+    <px:groupTabPanel name="EXPEDIENTE DATOS GENERALES">
+      <px:subGroupTabPanel name="Datos personales">
+        <px:portlet name="Datos">
+          <px:fieldSet name="Datos Personales">
+            <px:field fieldId="ID0EQC" fieldName="PrimerNombre" />
+            <px:field fieldId="ID0EGD" fieldName="SegundoNombre" />
+            <px:field fieldId="ID0ESD" fieldName="ApellidoPaterno" />
+            <px:field fieldId="ID0E5D" fieldName="ApellidoMaterno" />
+            <px:field fieldId="ID0EME" fieldName="Sexo" />
+            <px:field fieldId="ID0EIF" fieldName="Apodo" />
+            <px:fieldContainer name="FechaNacimiento">
+              <px:field fieldId="ID0EYF" fieldName="DiaNacimiento" />
+              <px:field fieldId="ID0EGG" fieldName="MesNacimiento" />
+              <px:field fieldId="ID0EWG" fieldName="AnioNacimiento" />
+            </px:fieldContainer>
+            <px:field fieldId="ID0EIH" fieldName="Edad" />
+          </px:fieldSet>
+          <px:field fieldId="ID0ELAAC" fieldName="Direccion" />
+          <px:fieldSet>
+            <px:field fieldId="ID0E3AAC" fieldName="Colonia" />
+            <px:field fieldId="ID0EJBAC" fieldName="Municipio" />
+            <px:field fieldId="ID0EHDAC" fieldName="CP" />
+          </px:fieldSet>
+          <px:fieldSet name="Datos de contacto">
+            <px:fieldContainer name="Teléfono de Casa">
+              <px:field fieldId="ID0EWDAC" fieldName="TelefonoCasa" />
+            </px:fieldContainer>
+            <px:fieldContainer name="Celular" Orientation="horizontal" debug:Orientation="87">
+              <px:field fieldId="ID0EIEAC" fieldName="Celular" />
+            </px:fieldContainer>
+            <px:field fieldId="ID0E1EAC" fieldName="Email" />
+            <px:field fieldId="ID0EGFAC" fieldName="NombrePadre" />
+          </px:fieldSet>
+          <px:fieldSet name="Datos del Padre o Tutor">
+            <px:field fieldId="ID0ESFAC" fieldName="VivePadre" />
+            <px:field fieldId="ID0E6FAC" fieldName="CelularPadre" />
+            <px:fieldContainer name="EmailPadre" Orientation="horizontal" debug:Orientation="129">
+              <px:field fieldId="ID0E4GAC" fieldName="EmailPadre" />
+            </px:fieldContainer>
+            <px:field fieldId="ID0ENHAC" fieldName="NombreMadre" />
+          </px:fieldSet>
+          <px:fieldSet name="Datos de la Madre o Tutora">
+            <px:field fieldId="ID0EZHAC" fieldName="ViveMadre" />
+            <px:field fieldId="ID0EGIAC" fieldName="CelularMadre" />
+            <px:fieldContainer name="EmailMadre" Orientation="horizontal" debug:Orientation="128">
+              <px:field fieldId="ID0EEJAC" fieldName="EmailMadre" />
+            </px:fieldContainer>
+          </px:fieldSet>
+          <px:fieldSet name="DatosPadres">
+            <px:field fieldId="ID0EUJAC" fieldName="EstadoCivilPadres" />
+            <px:field fieldId="ID0EQKAC" fieldName="ConQuienVive" />
+            <px:field fieldId="ID0EKLAC" fieldName="NombreConQuienVive" />
+            <px:field fieldId="ID0EWLAC" fieldName="DireccionConQuienVive" />
+            <px:field fieldId="ID0ECMAC" fieldName="TelefonoConQuienVive" />
+            <px:field fieldId="ID0EOMAC" fieldName="CelularConQuienVive" />
+            <px:field fieldId="ID0E1MAC" fieldName="ParentescoConQuienVive" />
+            <px:field fieldId="ID0EGNAC" fieldName="ConcatoEmergencias" />
+            <px:field fieldId="ID0EAOAC" fieldName="NombreConcatoEmergencias" />
+            <px:field fieldId="ID0EMOAC" fieldName="DireccionConcatoEmergencias" />
+            <px:field fieldId="ID0EYOAC" fieldName="TelefonoConcatoEmergencias" />
+            <px:field fieldId="ID0EEPAC" fieldName="CelularConcatoEmergencias" />
+            <px:field fieldId="ID0EQPAC" fieldName="ParentescoConcatoEmergencias" />
+            <px:field fieldId="ID0E3PAC" fieldName="HospitalRecomendado" />
+            <px:fieldContainer name="CuentaConSeguroGMM">
+              <px:field fieldId="ID0EJAAE" fieldName="TieneSeguroGastosMedicos" />
+              <px:field fieldId="ID0EWAAE" fieldName="Aseguradora" />
+              <px:field fieldId="ID0EEBAE" fieldName="NumeroPoliza" />
+            </px:fieldContainer>
+          </px:fieldSet>
+        </px:portlet>
+      </px:subGroupTabPanel>
+      <px:subGroupTabPanel name="Historial">
+        <px:field fieldId="ID0ECKBG" fieldName="Discapacidades" />
+        <px:field fieldId="ID0ESBAE" fieldName="TieneSeguroSocial" />
+        <px:field fieldId="ID0E4BAE" fieldName="InstitutoSeguridadSocial" />
+        <px:field fieldId="ID0EWCAE" fieldName="NumeroAfiliacion" />
+        <px:field fieldId="ID0ECDAE" fieldName="NombreMedicoCabecera" />
+        <px:field fieldId="ID0EQDAE" fieldName="TelefonoMedico" />
+        <px:fieldContainer name="UtilizaAparatos">
+          <px:field fieldId="ID0E5DAE" fieldName="UtilizaAparatos" />
+          <px:field fieldId="ID0EGFAE" fieldName="UtilizaAparatosComentarios" />
+          <px:field fieldId="ID0EXOBG" fieldName="AparatosQueUtiliza" />
+        </px:fieldContainer>
+        <px:fieldContainer name="UtilizaOtroAparato">
+          <px:field fieldId="ID0ELEAE" fieldName="UtilizaOtroAparato" />
+          <px:field fieldId="ID0EYEAE" fieldName="OtroAparato" />
+        </px:fieldContainer>
+        <px:field fieldId="ID0EUFAE" fieldName="OrigenUsoAparato" />
+        <px:field fieldId="ID0ENGAE" fieldName="EdadAdquirida" />
+        <px:field fieldId="ID0E3GAE" fieldName="ReaccionFamiliaAnteDiscapacidad" />
+        <px:field fieldId="ID0EIHAE" fieldName="Tratamiento" />
+        <px:field fieldId="ID0EUHAE" fieldName="HechosImportantes" />
+        <px:portlet name="Datos Médicos">
+          <px:fieldSet name="Datos médicos">
+            <px:field fieldId="ID0ECIAE" fieldName="TipoSangre" />
+            <px:field fieldId="ID0EAJAE" fieldName="PresentaConvulsiones" />
+            <px:field fieldId="ID0ELJAE" fieldName="SugerenciasCaracteristicasConvulsiones" />
+            <px:field fieldId="ID0EXJAE" fieldName="PermiteQueDecidaParamedico" />
+            <px:field fieldId="ID0EEKAE" fieldName="PadeceTic" />
+            <px:field fieldId="ID0ERKAE" fieldName="TicsQuePadece" />
+            <px:field fieldId="ID0E6KAE" fieldName="HaPresentadoCrisisNerviosa" />
+            <px:fieldContainer name="PresentaConvulsiones">
+              <px:field fieldId="ID0EMLAE" fieldName="RecomendacionCalmarCrisis" />
+            </px:fieldContainer>
+            <px:field fieldId="ID0E3LAE" fieldName="EstaBajoTratamiento" />
+            <px:field fieldId="ID0EHMAE" fieldName="PresentaAlergias" />
+            <px:field fieldId="ID0EINAE" fieldName="ComentariosAlergias" />
+            <px:field fieldId="ID0EUNAE" fieldName="RestriccionActividad" />
+            <px:field fieldId="ID0E6NAE" fieldName="RestriccionesActividadCausaMedica" />
+            <px:field fieldId="ID0ELOAE" fieldName="PuedeParticiparActividadesAlberca" />
+            <px:field fieldId="ID0EWOAE" fieldName="PuedeSubirseAlTobogan" />
+            <px:field fieldId="ID0EBPAE" fieldName="SabeNadar" />
+            <px:fieldContainer name="PermisoParaNadar">
+              <px:field fieldId="ID0EMPAE" fieldName="ComentariosParaNadar" />
+            </px:fieldContainer>
+            <px:field fieldId="ID0E1PAE" fieldName="PracticaDeportes" />
+            <px:field fieldId="ID0EFQAE" fieldName="DeporteQuePractica" />
+            <px:field fieldId="ID0ERQAE" fieldName="FrecuenciaQuePractica" />
+            <px:field fieldId="ID0E4QAE" fieldName="ControlEsfinteres" />
+            <px:field fieldId="ID0EIRAE" fieldName="UsaPañal" />
+            <px:field fieldId="ID0ETRAE" fieldName="ComentariosPañal" />
+            <px:field fieldId="ID0E6RAE" fieldName="CaracteristicasGenerales" />
+            <px:field fieldId="ID0ELSAE" fieldName="ComentariosGenerales" />
+            <px:field fieldId="ID0EXSAE" fieldName="PuntosOtorgadosLugarResidencia" />
+            <px:field fieldId="ID0EDTAE" fieldName="PuntosOtorgadosEstadoSaludFamiliar" />
+            <px:field fieldId="ID0EPTAE" fieldName="PuntosOtorgadosSalariosXDependientes" />
+            <px:field fieldId="ID0E2TAE" fieldName="PuntosOtorgadosVivienda" />
+            <px:field fieldId="ID0EHUAE" fieldName="IngresoFamiliar" />
+            <px:field fieldId="ID0ERXAE" fieldName="SaludFamiliar" />
+			  <px:field fieldId="ID0EQ1AE" fieldName="TipoComunidad" />
+			  <!--<px:field fieldId="ID0EP4AE" fieldName="AreaGeografica" />-->
+            <px:field fieldId="ID0EOAAG" fieldName="Inscripciones" />
+          </px:fieldSet>
+        </px:portlet>
+      </px:subGroupTabPanel>
+    </px:groupTabPanel>
+  </px:layout>
+</PersonaConDiscapacidad>

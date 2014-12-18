@@ -1,0 +1,60 @@
+.tabSelector 	{behavior:url('../Scripts/Behaviors/tabSelector.htc'); position:absolute;}
+.tabSelector .tab	{text-decoration:underline; cursor:hand;}
+
+.tabManager 	{behavior:url('../Scripts/Behaviors/tabManager.htc') url('../Scripts/Behaviors/flotante.htc'); position:absolute;}
+.tabManager .tabPanel {behavior:url('../Scripts/Behaviors/tableLoader.htc');}
+
+#tabs .tab { behavior:url('../Scripts/Behaviors/tab.htc'); }
+
+#tabs a
+{
+background: url('../../../../Images/Styling/left-tab-corner.gif') left top no-repeat;
+text-decoration: none;
+padding-left: 10px
+}
+
+#tabs a span
+{
+background: url('../../../../Images/Styling/right-tab-corner.gif') right top no-repeat;
+padding-right: 10px
+}
+
+#tabs a, #tabs a span
+{
+display: block;
+float: left;
+}
+
+/* Hide from IE5-Mac */
+#tabs a, #tabs a span
+{
+float: none
+}
+/* End hide */
+
+#tabs a:hover
+{
+background: url('../../../../Images/Styling/left-tab-corner.gif') left top no-repeat;
+padding-left: 10px
+}
+
+#tabs a:hover span
+{
+background: url('../../../../Images/Styling/right-tab-corner.gif') right top no-repeat;
+padding-right: 10px
+}
+
+#tabs ul
+{
+font-size:10pt; 
+list-style: none;
+padding: 0;
+margin: 0
+}
+
+#tabs li
+{
+font-size:10pt; 
+float: left;
+margin: 0;
+} 

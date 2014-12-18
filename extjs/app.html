@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="google" content="notranslate" />
+
+    <title>Panax UI</title>
+
+    <link rel="apple-touch-icon" href="resources/images/apple-touch-icon.png"/>
+    <link rel="stylesheet" type="text/css" href="resources/Sencha-Examples/style.css"/>
+	<link rel="stylesheet" type="text/css" href="resources/ux/statusbar/css/statusbar.css" />
+	<script type="text/javascript" src="ext-all-debug.js"></script>
+    <!-- The line below must be kept intact for Sencha Command to build your application -->
+    <script type="text/javascript">
+		Ext.Loader.setPath({
+			'Ext.ux': 'resources/ux'
+//			,'Ext.app': '../../../../../resources/extjs/ext-5.0.1/examples/portal/classes'
+			, 'Px': 'app'
+		});
+    </script><script type="text/javascript">
+        var Ext = Ext || {};
+        Ext.repoDevMode = true;
+        Ext.beforeLoad = function(tags){
+            // var theme = location.href.match(/theme=([\w-]+)/),
+            //     locale = location.href.match(/locale=([\w-]+)/);
+
+            // theme  = (theme && theme[1]) || (tags.desktop ? 'neptune' : 'neptune-touch');
+            // locale = (locale && locale[1]) || 'en';
+
+            //Ext.manifest = theme + "-" + locale;
+            Ext.manifest = 'neptune-en';
+            Ext.microloaderTags = tags;
+        };
+    </script>
+	<script type="text/javascript" src="scripts/md5.js"></script>
+	<script type="text/javascript" src="components.js"></script>
+	<script type="text/javascript" src="overrides.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="bootstrap.js" id="microloader"></script>
+    <link rel="stylesheet" type="text/css" href="resources/panax/panax.css" />
+</head>
+<body></body>
+</html>

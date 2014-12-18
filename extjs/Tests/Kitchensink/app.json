@@ -1,0 +1,84 @@
+{
+    "name": "KitchenSink",
+    "classpath": "${app.dir}/app,${app.dir}/../ux",
+    "framework": "ext",
+    "theme": "ext-theme-neptune",
+    "requires": [
+        "ext-locale",
+        "sencha-amf",
+        "sencha-soap",
+        "sencha-charts"
+    ],
+    "sass": {
+        "namespace": "KitchenSink"
+    },
+
+    "indexHtmlPath": "index.html",
+
+    "url": null,
+
+    "js": [
+        {
+            "path": "app.js",
+            "bundle": true
+        },
+    	{
+            "path": "lib/prettify/prettify.js",
+            "includeInBundle": true
+    	}
+    ],
+
+    "css": [
+        {
+            "path": "lib/prettify/prettify.css"
+        }
+    ],
+
+    "appCache": {
+        "cache": [
+            "index.html"
+        ],
+        "network": [
+            "*"
+        ],
+        "fallback": []
+    },
+
+    "resources": [
+    ],
+
+    "ignore": [
+        "^\\.svn$",
+        "^\\.git$"
+    ],
+
+    "archivePath": "archive",
+
+    "id": "7f0d3b50-5cb1-47e0-97b7-ffe69d12d49e",
+
+    "locales": [
+        "en",
+        "he"
+    ],
+
+    "builds": {
+        "classic": {
+            "theme": "ext-theme-classic"
+        },
+        "gray": {
+            "theme": "ext-theme-gray"
+        },
+        "crisp": {
+            "theme": "ext-theme-crisp"
+        },
+        "crisp-touch": {
+            "theme": "ext-theme-crisp-touch"
+        },
+        "neptune": {
+            "theme": "ext-theme-neptune"
+        },
+        "neptune-touch": {
+            "theme": "ext-theme-neptune-touch"
+        }
+    }
+}

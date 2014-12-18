@@ -1,0 +1,86 @@
+.x-toolbar {
+	border-color: transparent;
+}
+.x-form-readonly  textarea, 
+.x-form-readonly  select, 
+.x-form-readonly  input {
+	background: transparent !important;
+	border: 0px solid !important;
+}
+
+.x-form-readonly  .buttonsPanel {
+	display: none;
+}
+
+.x-checkboxgroup-form-item.x-form-readonly .x-form-item-body {
+	color: silver;
+}
+
+.x-form-checkboxgroup-body>.x-form-readonly.x-form-cb-checked
+ {
+	color: black; display: inline; text-decoration: underline;
+}
+
+.x-form-checkboxgroup-body>.x-form-readonly 
+
+{
+	display: none;
+}
+
+.x-form-readonly .x-form-trigger {
+	display: none;
+}
+
+.x-form-text { background-image:none !important; }
+.required INPUT, .required SELECT, .required TEXTAREA, .required SPAN {background-color:#FFFF99; border-width:'1px';}
+.notRequired INPUT, .notRequired SELECT, .notRequired TEXTAREA, .notRequired SPAN {background-color:#E6DBFF; border-width:'1px'; border-color:gray;}
+.changed, SPAN.changed *, .changed OPTION {background-color:yellowgreen !important;}
+
+.x-form-invalid-field {
+	border-width: 2px;
+}
+.x-form-invalid .x-datetime-body > table{
+	border: 1px #FF3300 solid;
+}
+
+body .x-panel {
+	margin-bottom: 0px !important;
+}
+
+.ajaxdropdown table.x-form-trigger-wrap { float: left;}
+.ajaxdropdown .buttonsPanel{
+	position: absolute;
+	right: -30px !important;
+	top: 3px !important;
+}
+.buttonsPanel .deletebutton a{
+	background: url(images/delete.png) no-repeat;
+}
+
+.buttonsPanel a{
+	display: block;
+	margin-right:5px;
+  width: 16px;
+  height: 16px;
+  background-position: 0 0px;
+  text-decoration: none;
+  float:left;
+}
+  
+.configbutton a {
+	background: url(../../../../resources/extjs/extjs-current/examples/shared/icons/fam/cog.png) no-repeat;
+}
+  
+.addbutton a{
+	background: url(images/add.png) no-repeat;
+}
+.refreshbutton a{
+	background: url(images/refresh.png) no-repeat;
+}
+.editbutton a{
+	background: url(images/edit.png) no-repeat;
+}
+
+.uppercase input, .uppercase textarea, .uppercase select {text-transform:uppercase;}
+.lowercase input, .lowercase textarea, .lowercase select {text-transform:lowercase;}
+.capitalize input, .capitalize textarea, .capitalize select {text-transform:capitalize;}

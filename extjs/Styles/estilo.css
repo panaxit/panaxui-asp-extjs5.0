@@ -1,0 +1,162 @@
+.URLLoader {behavior:url('../Scripts/Behaviors/URLLoader.htc');}
+INPUT, SELECT {border-color:paleturquoise; border-width:'1px'; border-style:'solid';}
+.required {background-color:lightgoldenrodyellow;}
+.requiredEmpty {background-color:red;}
+.changed {background-color:palegreen;}
+.activeInput {border-color:blue; background-color:paleturquoise}
+
+.imageButton {behavior:url('../Scripts/Behaviors/button.htc');}
+.rangeSelector {behavior:url('../Scripts/Behaviors/rangeSelector.htc') url('../Scripts/Behaviors/input.htc') ;}
+
+body {margin-left:.15cm; margin-top:2px; font-family:Arial, helvetica, sans-serif; filter: progid:DXImageTransform.Microsoft.Engrave(enabled=false);}
+/*TR {behavior:url('../Generic_Code/alternating_rows.htc');}*/
+
+/*#dataTable {border:'navy 1px solid'; behavior:url('../Scripts/Behaviors/initializeTable.htc');behavior:url('../Scripts/Behaviors/attachBehaviors.htc');}*/
+/*TR {behavior:url('../Scripts/Behaviors/alternating_rows.htc');}*/
+/*TD{border:none; font-size:8pt; border-collapse:collapse; padding-left:3pt; padding-right:3pt; vertical-align:top; white-space: nowrap;  } 
+TH{font-size:8pt; border-collapse:'collapse'; padding-left:3pt; padding-right:3pt; vertical-align:middle; white-space: nowrap;} */
+
+table 
+	{
+	font-size:8pt;
+	background-color:white;
+	border-collapse:collapse;
+	border-spacing:0;
+	}
+
+#dataTable
+	{
+	border:'navy 1px solid';
+	font-size:8pt;
+	}
+#dataTable TH {
+	padding: 5 5 5 5;
+	vertical-align: middle;
+	/*border: none;*/
+	}
+#dataTable TD {
+	padding: 5 5 5 5;
+	white-space: nowrap;
+	text-align:left;
+	vertical-align: top;
+	}
+
+SELECT .choose {color:orange;}
+
+.GridView {behavior:url('../Scripts/Behaviors/initializeGridView.htc');}
+.DetailsView {behavior:url('../Scripts/Behaviors/initializeDetailsView.htc');}
+
+.RecordChanged {background-color:yellowgreen}
+.RecordError {background-color:#CD5C5C}
+
+.link { text-decoration:underline; cursor:hand; }
+.clickable { cursor:hand; }
+
+strong.warning {color:'red';}
+strong.info {color:'orange';}
+
+.Dependant {border-style:dashed; border-width:2px; border-color:lightgreen; background-color:yellow;}
+.Dependency {border-style:dashed; border-width:2px; border-color:yellow;}
+
+.Parent {border-style:dashed; border-width:2px; border-color:red;}
+
+.CancelButton { background-color:red; color:white; }
+.ContinueButton { background-color:green; color:white; }
+.UploadButton { background-color:blue; color:white; }
+.Readonly { background-color:transparent; border:0px; }
+.HeaderRow { color:white; font-weight:'bolder'; text-align:right; }
+.HeaderRow TH { background-color:red; }
+.FooterRow { color:white; font-weight:'bolder'; text-align:right; }
+.FooterRow TH { background-color:red; }
+.DataRow { }
+
+.flotante { position:'absolute'; z-index:1002; behavior:url('../Scripts/Behaviors/flotante.htc'); }
+/*#identifier { display:'none'; behavior:url('../Scripts/Behaviors/identifier.htc') url('../Scripts/Behaviors/input.htc'); }*/
+img.Button { behavior:url('../Scripts/Behaviors/button.htc'); }
+img.Button.Expander {position:absolute; z-index:10000000; }
+
+SELECT { behavior:url('../Scripts/Behaviors/input.htc'); border:'blue 1px solid'; }
+TEXTAREA { behavior:url('../Scripts/Behaviors/input.htc'); border:'blue 1px solid'; font-size:8pt; }
+INPUT {font-size:7pt; font-family: Arial, helvetica, sans-serif; behavior:url('../Scripts/Behaviors/input.htc'); border-color:'blue'; border-width:'1px'; border-style:'solid'; /*background:'transparent'; */}
+INPUT CHECKBOX {border-color:'red';}
+.catalogo { behavior:url('../Scripts/Behaviors/catalogo.htc') url('../Scripts/Behaviors/input.htc'); }
+
+.ControlsRow { background-color:'white'; }
+#menus { position:'relative'; top: 20; left:50 }
+.TabPanel{behavior:url('../Scripts/Behaviors/URLLoader.htc');}
+.PanelContainer{position:absolute; behavior:url('../Scripts/Behaviors/flotante.htc');}
+.NoBorders {border:''}
+
+
+/*select, text {font-size:8pt;} */
+B, P, LI {font-size:8pt; font-family:Arial, helvetica, sans-serif} 
+UL { list-style-image:none; }
+
+.moneda { text-align:'right'; /*behavior:url(../Scripts/Behaviors/moneda.htc); */}
+.menu { border:'solid black 1px'; position:'absolute'; clip:rect(auto auto 50 auto); behavior:url('../Scripts/Behaviors/menu.htc'); }
+.cuenta { behavior:url('../Scripts/Behaviors/cuenta_objetos.htc'); }
+
+.uploader { behavior:url('../Scripts/Behaviors/uploader.htc'); }
+
+.linea { text-decoration:'underline'; cursor:'hand' }
+.mask { behavior: url('../Scripts/Behaviors/mask.htc'); }
+.formula { behavior: url('../Scripts/Behaviors/formula.htc'); font-family:Arial, helvetica, sans-serif}
+.autollenado { behavior:url('../Scripts/Behaviors/autollenado.htc'); }
+.total { behavior: url('../Scripts/Behaviors/total.htc'); }
+.hora { text-align:'center'; behavior: url('../Scripts/Behaviors/hora.htc'); }
+.numero { text-align:'right'; }
+.porcentaje, .percent { text-align:'right'; }
+.fecha { text-align:'center'}
+.formal { line-height:12pt; border-bottom-color:'black'; border-bottom-width:'1px'; border-top-width:'0px'; border-left-width:'0px'; border-right-width:'0px'; border-top-color:transparent; border-left-color:transparent; border-right-color:transparent; background-color:transparent;}
+.sin_borde {line-height:12pt; border-bottom-width:'0px'; border-top-width:'0px'; border-left-width:'0px'; border-right-width:'0px'; border-top-color:transparent; border-left-color:transparent; border-right-color:transparent; border-bottom-color:transparent; }
+.linea {line-height:12pt; border-width:'0px 0px 1px'; border-top-color:transparent; border-left-color:transparent; border-right-color:transparent; background-color:transparent;}
+.fina {line-height:12pt; border-width:'1px'; border-color:'black';}
+.negra {border-bottom-color:'black';}
+.blanca {border-bottom-color:'white';}
+.titulo1 {font-size:16pt;}
+.margen {line-height:1.7;}
+
+.CollapsedLabel { position:relative; left:20; font-weight:bolder; font-size:14pt; color:red}
+
+#freeze { position:'relative'; z-index: 999; /*behavior: url('../Scripts/Behaviors/freeze.htc'); */}
+#dataTable { display:'inline'; /*behavior: url('freeze.htc');*/ }
+#submit_button { position:'absolute'; z-index:1002; behavior:url('../Scripts/Behaviors/submit.htc') /*url('../Scripts/Behaviors/flotante.htc'); */background:'white'; border-style:'outset'; border-color:'silver'; border-width:3px; /*background-color:'blue'; color:'white'; */font-size:'8pt'; font-weight:'bolder';}
+
+.submit_sinMarcaCambios {position:'absolute'; z-index:1002; background:'white'; border-style:'outset'; border-color:'silver'; border-width:3px; font-size:'8pt'; font-weight:'bolder'; behavior:url('../Scripts/Behaviors/flotante.htc'); }
+
+
+
+	<!--
+	
+	.tooltiptitle{COLOR: #FFFFFF; text-decoration: none; CURSOR: Default; font-family: arial; font-weight: bold; font-size: 9pt}
+	.tooltipcontent{COLOR: #000000; text-decoration: none; CURSOR: Default; font-family: arial; font-size: 9pt;}
+	
+	#ToolTip{position:absolute; width: 100pt; top: 0pt; left: 0pt; z-index:4; visibility:hidden;}
+	
+	.NArial   {font-family: arial; font-size: 10pt}
+	.NArialL  {font-family: arial; font-size: 12pt}
+	.NArialS  {font-family: arial; font-size: 8pt}
+	.NArialW  {COLOR: #FFFFFF; font-family: arial; font-size: 10pt}
+	-->
+
+#dhtmltooltip
+{
+position: absolute;
+left: -300px;
+width: 150px;
+border: 1px solid black;
+padding: 2px;
+background-color: lightyellow;
+visibility: hidden;
+z-index: 100;
+/*Remove below line to remove shadow. Below line should always appear last within this CSS*/
+filter: progid:DXImageTransform.Microsoft.Shadow(color=gray,direction=135);
+}
+
+#dhtmlpointer
+{
+position:absolute;
+left: -300px;
+z-index: 101;
+visibility: hidden;
+}

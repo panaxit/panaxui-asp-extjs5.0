@@ -1,0 +1,161 @@
+.h1 {font-size:20pt}
+.h2 {font-size:17pt}
+
+br {mso-data-placement:same-cell;}
+.systemButtons span { padding-left:2; padding-right:2; }
+.systemButtons img.Button { cursor:hand; }
+.warning { }
+.information { color:blue; font-weight:bolder; }
+.readonly { border:0px; }
+.link {text-decoration:underline; cursor:hand;}
+
+.pageManager 	{behavior:url('../Scripts/Behaviors/pageManager.htc');}
+.pageSelector 	{behavior:url('../Scripts/Behaviors/pageSelector.htc');}
+.pageManager .page {behavior:url('../Scripts/Behaviors/tableLoader.htc');}
+.catalog { behavior:url('../Scripts/Behaviors/catalog.htc') url('../Scripts/Behaviors/input.htc'); /*width:100px;*/
+/*overflow: hidden;
+text-overflow: ellipsis;
+-o-text-overflow: ellipsis;
+white-space: nowrap;*/}
+.dataField { behavior:url('../Scripts/Behaviors/dataField.htc'); }
+
+.dataIsland { behavior:url('../Scripts/Behaviors/dataIsland.htc'); }
+.formula { behavior: url('../Scripts/Behaviors/formula.htc');}
+.rangeSelector { behavior:url('../Scripts/Behaviors/rangeSelector.htc') url('../Scripts/Behaviors/input.htc') ;}
+INPUT, SELECT, TEXTAREA { border:#7f9db9 1px solid; behavior:url('../Scripts/Behaviors/input.htc'); }
+TEXTAREA { font-size:8pt; }
+INPUT {font-size:7pt; font-family: Arial, helvetica, sans-serif; }
+
+.formView FIELDSET { width:100%; height:100%; border:2pt solid black; /*overflow:auto;scrollbar-3dlight-color:#FFFFFF;scrollbar-arrow-color:#000000;scrollbar-base-color:#FF9999;scrollbar-darkshadow-color:#000000;scrollbar-face-color:#000000;scrollbar-highlight-color:#000000;scrollbar-shadow-color:#0033CC;*/}
+.formView FIELDSET LEGEND { font-weight:bolder; font-size:170%}
+
+img.Button , img.imageButton,
+img.commandButton { cursor:hand; behavior:url('../Scripts/Behaviors/button.htc'); }/*background:url('../../../../Images/Buttons/btn_Delete.png') left top no-repeat;*/
+
+.fileManager { behavior:url('../Scripts/Behaviors/fileManager.htc') url('../Scripts/Behaviors/input.htc'); }
+.fileManager img.uploader { behavior:url('../Scripts/Behaviors/button.htc'); cursor:hand; }
+.fileManager TABLE TD {border:0px solid transparent !important;}
+
+
+BODY {margin-left:.15cm; margin-top:2px; font-family:Arial, helvetica, sans-serif; filter: progid:DXImageTransform.Microsoft.Engrave(enabled=false);}
+
+TABLE 
+	{
+	font-size:8pt;
+	background-color:white;
+	border-collapse:collapse;
+	border-spacing:0;
+	}
+
+TABLE TABLE {background-color:transparent;}
+
+ TH {
+	padding: 5 5 5 5;
+	vertical-align: middle;
+	text-align:center;
+	white-space: nowrap;
+	/*border: none;*/
+	}
+
+TD {
+	padding: 5 5 5 5;
+	white-space: nowrap;
+	text-align:left;
+	vertical-align: top;
+	}
+
+TR.borderLess TD { padding:0 5 0 5 !important; border:0px !important; }
+
+.pageSelector {position:relative;}
+.pageManager .pageSelector {position:static;}
+
+
+TABLE.formView TBODY TR TD { border:1px solid transparent; }
+TABLE.formView TBODY .dataRow.alt TD { background-color:#d1d3d4; }
+TABLE.formView TBODY .dataRow TH { background-color:transparent; color:black; }
+TABLE.formView TBODY .dataRow.alt TH { background-color:#d1d3d4; color:black; }
+
+TABLE.dataTable.gridView THEAD TR {position:relative;}
+TABLE.dataTable TABLE.dataTable.gridView THEAD TR {position:static;}
+TABLE.dataTable TABLE.dataTable .rowNumberCell {position:static !important;}
+TABLE.dataTable TBODY TR.highlight TD { background-color:yellow !important; color:black !important;}
+
+/********************************* STYLES *********************************/
+/*Gradients*/
+/* IE ignores styles with [attributes], so it will skip the following. */
+.gradient[class] {
+	background-image:url(../../../../Images/Layout/degradado_horizontal.png);
+	}
+
+.gradient {
+	width: 100%;
+	background-position:center;
+	/* Mozilla ignores crazy MS image filters, so it will skip the following */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale, src='../../../../Images/Layout/degradado_horizontal.png');
+	}
+
+.gradient_ud13 
+	{
+	width: 100%;
+	background-position:center;
+	/* Mozilla ignores crazy MS image filters, so it will skip the following */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale, src='../../../../Images/Layout/gradient_upside_down_1.3.png');
+	}
+
+.gradient_ud_edge
+	{
+	width: 100%;
+	background-position:center;
+	/* Mozilla ignores crazy MS image filters, so it will skip the following */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale, src='../../../../Images/Layout/gradient_upside_down_edge.png');
+	}
+
+.gradient_du_edge
+	{
+	width: 100%;
+	background-position:center;
+	/* Mozilla ignores crazy MS image filters, so it will skip the following */
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale, src='../../../../Images/Layout/gradient_downside_up_edge.png');
+	}
+
+.noBorder *, .noBorder {border:0px solid !important;}
+/*Rounded corners*/
+INPUT.topLeftRound { background:url('../../../../Images/Layout/TopLeftCorner.gif') left top no-repeat }
+INPUT.bottomLeftRound { background:url('../../../../Images/Layout/BottomLeftCorner.gif') left bottom no-repeat }
+INPUT.topRightRound { background:url('../../../../Images/Layout/TopRightCorner.gif') right top no-repeat }
+INPUT.bottomRightRound { background:url('../../../../Images/Layout/BottomRightCorner.gif') right bottom no-repeat }
+
+/*Tienen que estar en este orden*/
+/*.required {border:'1px solid #FFFF99'}*/
+.calculating {background-color:yellow;}
+.required INPUT, .required SELECT, .required TEXTAREA, .required SPAN {background-color:#FFFF99; border-width:'1px';}
+.notRequired INPUT, .notRequired SELECT, .notRequired TEXTAREA, .notRequired SPAN {background-color:#E6DBFF; border-width:'1px'; border-color:gray;}
+.changed, SPAN.changed *, .changed OPTION {background-color:yellowgreen !important;}
+.error {background-color:red; color:white;}
+.delete TD, .delete TH { background-color:red !important; }
+
+/*codigo obtenido de http://veerle-v2.duoh.com/blog/comments/simple_scalable_css_based_breadcrumbs/ */
+ul#crumbs, #crumbs li {
+list-style-type:none;
+padding:0;
+margin:0;
+}
+
+#crumbs {
+border:1px solid #dedede;
+height:2.3em;
+}
+
+#crumbs li {
+float:left;
+line-height:2.3em;
+padding-left:.75em;
+color:#777;
+}
+
+#crumbs li a {
+display:block;
+padding:0 15px 0 0;
+text-decoration:none;
+background:url(../../../../Images/Layout/crumbs.gif) no-repeat right center;
+}

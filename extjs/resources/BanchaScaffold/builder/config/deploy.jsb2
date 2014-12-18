@@ -1,0 +1,51 @@
+{
+    projectName: 'Bancha Scaffold',
+    deployDir: '.',
+    oldlicenseText: "Bancha\nCopyright(c) 2011-2014 codeQ e.U.\nmail@banchaproject.org",
+    pkgs: [{
+        name: 'Bancha Scaffold Package',
+        file: 'bancha-scaffold.js',
+        isDebug: true,
+        fileIncludes: [{
+            text: 'Validations.js',
+            path: '../../src/data/override/'
+        },
+        {
+            text: 'File.js',
+            path: '../../src/data/validator/'
+        },
+        {
+            text: 'Validators.js',
+            path: '../../src/data/'
+        },
+        {
+            text: 'VTypes.js',
+            path: '../../src/form/field/override/'
+        },
+        {
+            text: 'Config.js',
+            path: '../../src/form/'
+        },
+        {
+            text: 'Config.js',
+            path: '../../src/grid/'
+        },
+        {
+            text: 'Util.js',
+            path: '../../src/'
+        },
+        {
+            text: 'Panel.js',
+            path: '../../src/form/override/'
+        },
+        {
+            text: 'Panel.js',
+            path: '../../src/grid/override/'
+        },
+        {
+            text: 'ManagementPanel.js',
+            path: '../../src/grid/'
+        }]
+    }],
+    resources: []
+}
