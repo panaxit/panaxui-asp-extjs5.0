@@ -12,7 +12,7 @@ Ext.define('Px.Application', {
 		,'Px.DummyText'
 		,'Px.view.Header'
 		,'Px.view.Login'
-		,'Px.view.ThemeSwitcher' //To be removed
+		//,'Px.view.ThemeSwitcher' //To be removed
 		,'Px.view.ContentPanel'
 		,'Px.store.Navigation'
 		,'Px.view.navigation.Breadcrumb'

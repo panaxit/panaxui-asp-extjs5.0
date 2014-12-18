@@ -22,11 +22,11 @@ Ext.define('Px.view.Header', {
             flex: 1
         }];
 
-        if (!Ext.getCmp('options-toolbar')) {
-            this.items.push({
-                xtype: 'themeSwitcher'
-            });
-        }
+        // if (!Ext.getCmp('options-toolbar')) {
+        //     this.items.push({
+        //         xtype: 'themeSwitcher'
+        //     });
+        // }
 
         this.callParent();
     }
