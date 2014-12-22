@@ -24,7 +24,7 @@
 
 	<!-- LONG STRINGS -->
 	<xsl:template mode="formView.control" match="*[ 
-		(@dataType='nvarchar' or @dataType='nchar') and 
+		(@dataType='nvarchar' or @dataType='nchar' or @dataType='text') and 
 		(@controlType='default') and 
 		(@length&gt;255) ]">
 
