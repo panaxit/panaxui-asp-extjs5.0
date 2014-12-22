@@ -11,6 +11,10 @@
 		<xsl:apply-templates select="." mode="formView.control.date"/>
 	</xsl:template>
 
+	<xsl:template match="*[(@controlType='default') and (@dataType='time') ]" mode="formView.control">
+		<xsl:apply-templates select="." mode="formView.control.time"/>
+	</xsl:template>
+
 	<xsl:template match="*[(@controlType='default') and (@dataType='datetime') ]" mode="formView.control">
         xtype: 'fieldcontainer',
         layout: 'hbox',
