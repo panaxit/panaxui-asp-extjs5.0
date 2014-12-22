@@ -33,6 +33,8 @@
     	- ID field shown when clicked & store not loaded
     - `ExtJS 5.1`: Works without Formula fix (dbinding: panax_record.), UX issues
     	- GET request when selecting, disappears from UI
+**[[E] Layout run failed]**
+	- `ExtJS 5.1` in grids, windows, etc
 
 ### MODELS & CRUD
 
@@ -150,8 +152,9 @@
 **[ROADMAP: Version 13.0 Refactoring]**
 	- Start with stripped-down Kitchensink Shell
 		- clean it
-	- Refactor components.js to panax-core.js and ExtJS components (controls, models, etc)
-		- Move JS functions to pure-js libraries
+	- Refactor components.js to app/PanaxCore.js and ExtJS components (controls, models, etc)
+		- Move JS functionalities to pure-js libraries
+		- Remove REQUIRES from Application.js and load dynamically when needed 
 	- Add ASP and XSL functionality progressively
 		- XSL call pure-js libraries
 		- XSL files: Clean and separate in logic & atomic parts

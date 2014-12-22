@@ -1,6 +1,3 @@
-Ext.define('Px.model.Base', {
-    extend: 'Ext.data.Model',
-    schema: {
-        namespace: 'Px.model'
-    }
+Ext.define('Panax.model.Base', {
+    extend: 'Panax.model.SchemaBase'
 });

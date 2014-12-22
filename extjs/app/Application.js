@@ -9,14 +9,25 @@ Ext.define('Px.Application', {
         'Ext.tip.QuickTipManager',
         'Ext.chart.*',
         ,'Px.*'
-		,'Px.DummyText'
 		,'Px.view.Header'
 		,'Px.view.Login'
-		//,'Px.view.ThemeSwitcher' //To be removed
+		//,'Px.view.ThemeSwitcher'
 		,'Px.view.ContentPanel'
 		,'Px.store.Navigation'
 		,'Px.view.navigation.Breadcrumb'
-		,'Px.view.navigation.Tree'
+		,'Px.view.navigation.Tree',
+
+        'Panax.data.Proxy',
+        'Panax.data.CatalogProxy',
+        'Panax.view.PanaxPanel',
+        'Panax.view.PanaxGrid',
+        'Panax.view.PanaxForm',
+        'Panax.view.PanaxWindow',
+        'Panax.view.base.FileManager',
+        'Panax.view.base.ImageContainer',
+        'Panax.view.dataview.MultiSort',
+        'Panax.view.controls.AjaxComboBox',
+
     ],
 
     controllers: [
