@@ -53,8 +53,8 @@
 
 	<!-- MONEY -->
 	<xsl:template mode="formView.control" match="*[ 
-		(@dataType='money') and
-		 (@controlType='default') ]">
+		(@dataType='money' or @dataType='float') and
+		(@controlType='default') ]">
 
 			//xtype: 'currencyfield',
 			xtype: 'numberfield',
