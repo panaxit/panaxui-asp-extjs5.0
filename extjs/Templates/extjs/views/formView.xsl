@@ -75,11 +75,11 @@
 				<xsl:otherwise>
 					, get: function(record) {
 						var val = record &amp;&amp; record.isModel ? record.get('<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/>') : null;
-						return !record.dirty ? record.<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/> : val;
+						return !record.dirty ? record._<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/> : val;
 					}
 					, set: function(value) {
 						var record = this.get('panax_record');
-						//record.<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/> = value;
+						//record._<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/> = value;
 						record.set('<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/>', value);
 					}
 				</xsl:otherwise>
