@@ -250,6 +250,40 @@ Ext.define('Panax.data.Proxy', {
     }
 });
 
+Ext.define('Panax.data.CatalogProxy', {
+	extend: 'Ext.data.proxy.Ajax',
+	alias: 'proxy.panax_catalogproxy',
+
+	url: 'scripts/xmlCatalogOptions.asp',
+	reader: {
+		type: 'json',
+		rootProperty: 'data',
+		successProperty: 'success',
+		messageProperty: 'message',
+		totalProperty: 'total'
+	},
+	pageParam: 'pageIndex',
+	limitParam: 'pageSize',
+	filterParam: 'filters',
+	sortParam: 'sorters',
+	extraParams: { 
+		output: 'json' 
+	},
+	listeners: {
+		exception: function(proxy, response, operation){
+			//alert(response.responseText)
+			var message = operation.getError();
+			message = Ext.isObject(message)?message["error"]:message;
+			Ext.MessageBox.show({
+				title: 'ERROR!',
+				msg: message,
+				icon: Ext.MessageBox.ERROR,
+				buttons: Ext.Msg.OK
+			});
+		}
+	}
+});
+
 // Ext.define('Panax.data.Init', {
 //     requires: [
 //         'Ext.ux.ajax.JsonSimlet',
@@ -1302,51 +1336,41 @@ Ext.define('Panax.view.PanaxWindow', {
 // 	// associations: [],
 // });
 
-Ext.define("Panax.store.ajaxdropdown", {
-    extend: 'Ext.data.Store',
-    alias: 'store.ajaxdropdown',
-	//model : "Panax.model.ajaxdropdown",
-
-	pageSize: 0,
-
-	remoteFilter: true,
-
-	proxy: {
-		type: 'ajax',
-		url: 'scripts/xmlCatalogOptions.asp',
-		reader: {
-			type: 'json',
-			rootProperty: 'data',
-			successProperty: 'success',
-			messageProperty: 'message',
-			totalProperty: 'total'
-		},
-		pageParam: 'pageIndex',
-		limitParam: 'pageSize',
-		filterParam: 'filters',
-		sortParam: 'sorters',
-		extraParams: { 
-			output: 'json' 
-		},
-		listeners: {
-			exception: function(proxy, response, operation){
-				//alert(response.responseText)
-				var message = operation.getError();
-				message = Ext.isObject(message)?message["error"]:message;
-				Ext.MessageBox.show({
-					title: 'ERROR!',
-					msg: message,
-					icon: Ext.MessageBox.ERROR,
-					buttons: Ext.Msg.OK
-				});
-			}
+Ext.define("Panax.controls.AjaxComboBox", {
+    extend: 'Ext.form.field.ComboBox',
+	//model: 'Panax.model.ajaxdropdown',
+	alias:'widget.ajaxcombobox'
+	, valueNotFoundText: "valueNotFound"
+	, displayField: 'text'
+	, valueField: 'id'
+	, publishes: 'value'
+    , queryMode: 'remote'
+    , queryParam: false
+    //, queryMode: 'local'
+    , queryCaching: false //Temporalmente siempre hacer la llamada Ajax al catalogo
+    //, triggerAction: 'all'
+	, editable: false
+	//, typeAhead: true
+	//, editable: true
+	//, forceSelection: true 
+	
+	// //OVERRIDE to support {Object} Values
+	// setValue: function(value) {
+	// 	debugger;
+	// 	return this.doSetValue(value);
+	// },
+	// getValue: function(value) {
+	// 	debugger;
+	// 	return me.value;
+	// }
+	// OVERRIDE to support remote String filters
+	, setFilters: function(filters) {
+		if(Ext.isString(filters)) {
+			this.getStore().getProxy().extraParams.filters = filters;
+		} else {
+			this.callParent(arguments);
 		}
-	},
-
-	constructor: function (configuration) {
-         //Ext.apply(this.proxy, config);
-         this.callParent(arguments);
-    }
+	}
 });
 
 // Ext.define("Panax.controls.ajaxdropdown", {

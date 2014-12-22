@@ -18,12 +18,92 @@
 	<xsl:template match="*[@controlType='combobox' or (@controlType='default' and @dataType='foreignKey')]" mode="formView.control">
 	        xtype: 'fieldcontainer'
 	        , fieldLabel: '<xsl:value-of select="@headerText" />'
-			//, layout: { type: 'table', columns: 1 }
 			, layout: 'vbox'
-	        , items: [<xsl:apply-templates select="*" mode="formView.control"/>]
+	        , items: [
+	        	<xsl:apply-templates select="*" mode="formView.control.comboBox"/>
+	        	<xsl:if test="count(//*)>1">
+	        		<xsl:apply-templates select="*[1]" mode="formView.control.comboBox.selected"/>
+	        	</xsl:if>
+	        ]
 	</xsl:template>
 
-	<xsl:template match="*[@controlType='combobox' or (@controlType='default' and @dataType='foreignKey')]//*" mode="formView.control">
+	<xsl:template match="*" mode="formView.control.comboBox">
+		<xsl:variable name="foreignElement">
+			<xsl:apply-templates select="*[not(name(.)='items')][string(@mode)!='none']" mode="field_id"/>
+		</xsl:variable>
+		<xsl:variable name="dependant">
+			<xsl:for-each select="ancestor::*[1][not(@dataType='foreignKey')][not(name(.)='items')][string(@mode)!='none']"><xsl:apply-templates select="." mode="field_id"/></xsl:for-each>
+		</xsl:variable>
+		<xsl:apply-templates select="*" mode="formView.control.comboBox"/>
+		<xsl:if test="*">,</xsl:if>
+		{
+	        xtype: 'fieldcontainer'
+			, layout: 'hbox'
+	        , items: [{
+				xtype: 'ajaxcombobox'
+				, name: '<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/>'
+		        <xsl:if test="(parent::*[@dataText and @dataValue]) or (child::*[@dataText and @dataValue])">
+		        	, fieldLabel: '<xsl:value-of select="@headerText" />'
+		        </xsl:if>
+				//, emptyText: '<xsl:value-of select="@headerText"/>'
+	 			, itemId: "<xsl:apply-templates select="." mode="field_id"/>"
+				, reference: "<xsl:apply-templates select="." mode="field_id"/>"
+				, publishes: 'value'
+				, bind: {
+				<xsl:if test="parent::*[1]/@dataType='foreignKey'">
+					value: '{<xsl:apply-templates select="." mode="bindName"/>}',
+				</xsl:if>
+				<xsl:if test="$foreignElement!=''">
+					filters: "[<xsl:value-of select="@foreignKey" />]='{<xsl:value-of select="$foreignElement"/>.value}'"
+				</xsl:if>
+				}
+				, store: {
+					model: "<xsl:apply-templates mode="catalogName" select="."/>",
+					proxy: {
+						type: 'panax_catalogproxy',
+						extraParams: {
+							catalogName: "<xsl:value-of select="@Table_Schema" />.<xsl:value-of select="@Table_Name" />",
+							dataValue: "<xsl:value-of select="@dataValue"/>",
+							dataText: "<xsl:value-of select="@dataText"/>",
+							lang: "<xsl:value-of select="@xml:lang"/>",
+							orderBy: "<xsl:value-of select="@orderBy"/>",
+							sortDirection: "<xsl:value-of select="@sortDirection"/>",
+							OptNew: "<xsl:apply-templates select="." mode="control.config.insertEnabled"/>"
+						}
+					},
+					pageSize: 0,
+					remoteFilter: true
+				}
+				<!-- READONLY -->
+				<xsl:call-template name="control.readOnly" />
+			}, {
+				xtype: 'button',
+				icon: null,
+				glyph: 42,
+		        menu: [{
+		            text:'Menu Item 1'
+		        },{
+		            text:'Menu Item 2'
+		        },{
+		            text:'Menu Item 3'
+		        }]
+				<!-- EDITABLE/READONLY -->
+				<xsl:call-template name="control.readOnly" />
+			}]
+		}
+	</xsl:template>
+
+	<xsl:template match="*" mode="formView.control.comboBox.selected">
+		<!-- , {
+			fieldLabel: ' ',
+			xtype: 'displayfield',
+			bind: {
+				value: '{<xsl:apply-templates select="." mode="field_id"/>.value}'
+			}
+		} -->
+	</xsl:template>
+
+	<!-- <xsl:template match="*[@controlType='combobox' or (@controlType='default' and @dataType='foreignKey')]//*" mode="formView.control.OLD.COMBOBOX">
 		<xsl:param name="name">
 			<xsl:choose>
 				<xsl:when test="@name"><xsl:value-of select="@name"/></xsl:when>
@@ -58,12 +138,12 @@
 				, editable: false
 				//, typeAhead: true
 				//, editable: true
-				//, forceSelection: true <!-- se quita para que pueda poner el valor sin que lo borre, se habilita en el listener change -->
+				//, forceSelection: true 
 		        <xsl:if test="(parent::*[@dataText and @dataValue]) or (child::*[@dataText and @dataValue]) ">
 		        	, fieldLabel: '<xsl:value-of select="@headerText" />'
 		        </xsl:if>
 				//, emptyText: '<xsl:value-of select="@headerText"/>'
-				<xsl:if test="@enforceConstraint">, enforceConstraint: Boolean(<xsl:value-of select="@enforceConstraint"/>)</xsl:if>
+				<xsl:if test="@enforceConstraint">, enforceConstraint: Boolean(<xsl:value-of select="@enforceConstraint"/>)</xsl:if> -->
 				<!-- , settings: 
 					catalogName: "<xsl:value-of select="@Table_Schema" />.<xsl:value-of select="@Table_Name" />",
 					filters: "<xsl:value-of select="@filters" />",
@@ -82,64 +162,81 @@
 				, editEnabled: <xsl:apply-templates select="." mode="control.config.editEnabled"/>
 				, deleteEnabled: <xsl:apply-templates select="." mode="control.config.deleteEnabled"/>
 				, refreshEnabled: <xsl:apply-templates select="." mode="control.config.refreshEnabled"/> -->
-	 			, itemId: "<xsl:apply-templates select="." mode="field_id"/>"
+	 			<!-- , itemId: "<xsl:apply-templates select="." mode="field_id"/>"
 				, reference: "<xsl:apply-templates select="." mode="field_id"/>"
 				, valueNotFoundText: "valueNotFound"
 				, displayField: 'text'
-				, valueField: 'id'
+				, valueField: 'id' -->
+				<!-- , bind: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}' -->
 				<!-- , bind: {
 					<xsl:choose>
-					<xsl:when test="parent::*[@dataType='foreignKey']">
-					selection: '{<xsl:apply-templates select="." mode="bindName"/>}'
-					</xsl:when>
-					<xsl:otherwise>
-					value: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}'
-					</xsl:otherwise>
+						<xsl:when test="parent::*[@dataType='foreignKey']">
+						selection: '{<xsl:apply-templates select="." mode="bindName"/>}'
+						</xsl:when>
+						<xsl:otherwise>
+						value: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}'
+						</xsl:otherwise>
 					</xsl:choose>
-				} -->
-				, bind: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}'
-				, store: {
-					type: 'ajaxdropdown',
-					model: "<xsl:apply-templates mode="catalogName" select="."/>"
 				}
-	  			, listeners: {
-					focus: function(me, event, eOpts) {
-						var store = me.getStore();
-						var oProxy = store.getProxy();
+				, publishes: 'value' -->
+				<!-- , bind: {					
+					value: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}'
+					<xsl:if test="$foreignElement!=''">
+					, filters: {
+						property: '<xsl:value-of select="@foreignKey" />',
+						value: '{<xsl:value-of select="$foreignElement"/>.value}'
+					}
+					</xsl:if>
+				} -->
+				<!-- , store: { -->
+					<!-- type: 'ajaxdropdown', -->
+					<!-- model: "<xsl:apply-templates mode="catalogName" select="."/>",
+					proxy: {
+						type: 'panax_catalogproxy',
+						extraParams: {
+							catalogName: "<xsl:value-of select="@Table_Schema" />.<xsl:value-of select="@Table_Name" />",
+							dataValue: "<xsl:value-of select="@dataValue"/>",
+							dataText: "<xsl:value-of select="@dataText"/>",
+							lang: "<xsl:value-of select="@xml:lang"/>",
+							orderBy: "<xsl:value-of select="@orderBy"/>",
+							sortDirection: "<xsl:value-of select="@sortDirection"/>",
+							OptNew: "<xsl:apply-templates select="." mode="control.config.insertEnabled"/>"
+						}
+					},
+					pageSize: 0,
+					remoteFilter: true
+				} -->
+	  			<!-- , listeners: {
+		  			<xsl:if test="$foreignElement!=''">
+						focus: function(me, event, eOpts) {
+							var store = me.getStore();
+							var oProxy = store.getProxy();
 
-						oProxy.extraParams.filters = "";
-
-						<xsl:if test="$foreignElement!=''">
 							//itemId useful here
 							var foreignElement = Ext.ComponentQuery.query('#<xsl:value-of select="$foreignElement"/>')[0],
-								fkValue = foreignElement.value?foreignElement.value:"";
-
+							fkValue = foreignElement.value?foreignElement.value:"";
 							oProxy.extraParams.filters = "[<xsl:value-of select="@foreignKey" />]='" + fkValue + "'";
-						</xsl:if>
 
-						oProxy.extraParams.catalogName = "<xsl:value-of select="@Table_Schema" />.<xsl:value-of select="@Table_Name" />";
-						oProxy.extraParams.lang = "<xsl:value-of select="@xml:lang"/>";
-						oProxy.extraParams.orderBy = "<xsl:value-of select="@orderBy"/>";
-						oProxy.extraParams.dataValue = "<xsl:value-of select="@dataValue"/>";
-						oProxy.extraParams.dataText = "<xsl:value-of select="@dataText"/>";
-						oProxy.extraParams.sortDirection = "<xsl:value-of select="@sortDirection"/>";
-						oProxy.extraParams.OptNew = "<xsl:apply-templates select="." mode="control.config.insertEnabled"/>";
-
-						store.load();
-					}, 
-					change: function(me, newValue, oldValue, eOpts) {
-						<xsl:if test="$dependant!=''">
-							var dependant = Ext.ComponentQuery.query('#<xsl:value-of select="$dependant"/>')[0]
-;
-							if(oldValue!=newValue || !newValue) {
-								//dependant.select(null);
-								dependant.setValue(null, true);
+							if(store.isLoaded()) {
+								debugger;
+								store.reload();
+								//store.load();
 							}
-						</xsl:if>
+						}, 
+					</xsl:if>
+					<xsl:if test="$dependant!=''">
+					change: function(me, newValue, oldValue, eOpts) {
+						var dependant = Ext.ComponentQuery.query('#<xsl:value-of select="$dependant"/>')[0];
+						debugger;
+						if(oldValue!=newValue || !newValue) {
+							//dependant.select(null);
+							dependant.setValue(null, true);
+						}
 					}
-				}
+					</xsl:if>
+				} -->
 				<!-- READONLY -->
-				<xsl:call-template name="control.readOnly" />
+				<!-- <xsl:call-template name="control.readOnly" />
 			}, {
 				xtype: 'button',
 				icon: null,
@@ -150,12 +247,12 @@
 		            text:'Menu Item 2'
 		        },{
 		            text:'Menu Item 3'
-		        }]
+		        }] -->
 				<!-- EDITABLE/READONLY -->
-				<xsl:call-template name="control.readOnly" />
+				<!-- <xsl:call-template name="control.readOnly" />
 			}]
 		}
-	</xsl:template>
+	</xsl:template> -->
 
 </xsl:stylesheet>
 
