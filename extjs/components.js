@@ -325,7 +325,7 @@ Ext.define('Panax.data.CatalogProxy', {
 
 
 Ext.define('Panax.view.base.FileManager', { 
-    extend: 'Ext.container.Container', 
+    extend: 'Ext.form.FieldContainer', 
     alias: 'widget.filemanager', 
  
     NO_IMAGE_FILE: 'Images/FileSystem/blank.png', 
@@ -334,11 +334,11 @@ Ext.define('Panax.view.base.FileManager', {
     CLEAR_URL:  '/ClearImage/', 
  
     width: 205, 
-	layout: { type: 'table', columns: 2 },
+	layout: { type: 'table', columns: 4, rows: 1 },
 	// src: '../../../../../Images/FileSystem/no_photo.gif',
 	name: undefined,
 	readOnly: false,
-	title: undefined,//'Imagen',
+	title: 'Archivo Adjunto',
 	showPreview: false,
 	showFileName: true,
 	src: '',
@@ -407,12 +407,12 @@ Ext.define('Panax.view.base.FileManager', {
                 title: me.title, 
                 width: 122, 
                 height: 140, 
-                margin: '0 0 0 0', 
+                bodyPadding: 0,
+                padding: 8,
                 layout: 'anchor', 
                 items: [imageHolder] 
             }, { 
                 xtype: 'container', 
-                margin: '4 0 0 5', 
                 layout: {
 					type:'vbox',
 					padding:'5',
@@ -422,7 +422,6 @@ Ext.define('Panax.view.base.FileManager', {
 				defaults: { 
                     xtype: 'button', 
                     width: 70, 
-                    margin: '0 0 5 0'
                 }, 
                 items: [{
 						xtype:'fieldcontainer'
@@ -698,6 +697,7 @@ Ext.define('Panax.view.base.ImageContainer', {
 	
     NO_IMAGE_FILE:  'Images/FileSystem/no_photo.gif', 
     UPLOAD_URL:     '/FilesRepository/Test/', 
+    title: 'Imagen Adjunta',
     
 	fileChange: function(el, val) {
         var me = this, imagePath = val;

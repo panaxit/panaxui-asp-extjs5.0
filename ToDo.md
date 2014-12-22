@@ -9,7 +9,7 @@
 	- Chequera
 		- vista filters
 			- Busqueda (formView/filters)
-				- datetime CONTROL (ver primero: [Fields] ABSTRACCION DATA FIELD)
+				- datetime CONTROL (ver primero: [Fields] ABSTRACCION FieldContainer)
 				- Opciones: >, >=, <, <=, =, BETWEEN, LIKE
 			- busqueda y resultados en misma pagina (iframe, u otro panel con su jerarquia?)
 
@@ -72,7 +72,6 @@
 
 **[FormView]**
 	- Fix tabs layouts: junctionTables and hasMany-foreignTables default in a separated tab, otherwise in fieldset with maxHeightsessions?
-	- Picture field label not as fieldset, but as regular field
 
 **[SHELL]**
 	- Menu.asp : Global.js - ID for Navigation node not Title, but unique ID
@@ -109,14 +108,14 @@
 		- Borrar (when selected)
 
 **[Fields]**
-	- REFACTORING: ABSTRACCION DATA FIELD:
-		- Ext.Container +Mixin: form.dataField
+	- REFACTORING: ABSTRACCION FieldContainer:
+		- Ext.Container +Mixin: form.FieldContainer
 		- Siempre regresan un valor para persistir
 		- Incluyen 1 o + controles
 		- Pueden incluir otros components anidados
 		- Ver ejemplo Uriel (dataField.xsl)
 	- MONEY textfield: Ext.ux.form.CurrencyField (components.js)
-	- DATETIME: Extend it like CurrencyField? (see dataField)
+	- DATETIME: Extend it like CurrencyField? (see FieldContainer)
 		- https://github.com/zombeerose/DateTime/tree/master/source/form/field
 		- https://github.com/NLeSC/ExtJS-DateTime
 	- READONLY: Display controls as labels?

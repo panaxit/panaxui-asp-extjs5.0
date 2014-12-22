@@ -8,7 +8,8 @@
 	exclude-result-prefixes="px">
 
 	<xsl:template match="*[@controlType='file' and @dataType='nvarchar']" mode="formView.control">
-    	xtype: 'filefield'
+    	xtype: 'filemanager'
+    	<!-- xtype: 'filefield' -->
 		, fieldLabel: '<xsl:value-of select="@fieldName"/>'
 		, name: '<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/>'
 		, bind: {
@@ -20,7 +21,7 @@
 
 	<xsl:template match="*[@controlType='picture' and @dataType='nvarchar']" mode="formView.control">
     	xtype: 'imagemanager'
-		, title: '<xsl:value-of select="@fieldName"/>'
+		, fieldLabel: '<xsl:value-of select="@fieldName"/>'
 		, name: '<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/>'
 		, value: null
 		, defaultValue: '<xsl:value-of select="@text"/>'
