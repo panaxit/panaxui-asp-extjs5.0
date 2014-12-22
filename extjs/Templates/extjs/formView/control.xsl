@@ -11,7 +11,7 @@
 	<xsl:template match="*" mode="formView.control">
 		fieldLabel: '<xsl:value-of select="@fieldName"/>',
 		xtype: 'displayfield',
-        value: 'formView.control NOT IMPLEMENTED: dataType:<xsl:value-of select="@dataType"/>, controlType:<xsl:value-of select="@controlType"/>, length:<xsl:value-of select="@length"/>'
+        value: '<strong>NOT IMPLEMENTED</strong>: dataType:<xsl:value-of select="@dataType"/>, controlType:<xsl:value-of select="@controlType"/>, length:<xsl:value-of select="@length"/>'
 	</xsl:template>
 
 	<!-- READONLY -->

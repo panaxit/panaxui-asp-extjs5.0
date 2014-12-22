@@ -9,11 +9,13 @@
 
 	<!-- SHORT STRINGS -->
 	<xsl:template mode="formView.control" match="*[ 
-		(@controlType='default') and 
+		(@controlType='default' or @controlType='password') and 
 		(@dataType='varchar' or @dataType='nvarchar' or @dataType='nchar' or @dataType='char') and 
 		(not(@length) or @length&lt;=255) ]">
-
 			xtype: 'textfield',
+			<xsl:if test="@controlType='password'">
+				inputType: 'password',
+			</xsl:if>
 			name: '<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/>',
 			emptyText: '<xsl:value-of select="@fieldName"/>',
 			bind: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}',
@@ -27,7 +29,6 @@
 		(@dataType='nvarchar' or @dataType='nchar' or @dataType='text') and 
 		(@controlType='default') and 
 		(@length&gt;255) ]">
-
 			xtype: 'textarea',
 			name: '<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/>',
 			emptyText: '<xsl:value-of select="@fieldName"/>',
@@ -41,7 +42,6 @@
 	<xsl:template mode="formView.control" match="*[ 
 		(@dataType='int' or @dataType='tinyint') and 
 		(@controlType='default') ]">
-
 			xtype: 'numberfield',
 			name: '<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/>',
 			emptyText: '<xsl:value-of select="@fieldName"/>',
@@ -55,7 +55,6 @@
 	<xsl:template mode="formView.control" match="*[ 
 		(@dataType='money' or @dataType='float') and
 		(@controlType='default') ]">
-
 			//xtype: 'currencyfield',
 			xtype: 'numberfield',
 			hideTrigger: true,

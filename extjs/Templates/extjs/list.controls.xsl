@@ -20,12 +20,12 @@
 <!-- FormView -->
 <xsl:include href="views/formView.xsl" />
 <xsl:include href="formView/control.xsl" />
-<xsl:include href="formView/textField.xsl" />
-<xsl:include href="formView/imageField.xsl" />
-<xsl:include href="formView/dateField.xsl" />
-<xsl:include href="formView/radioGroup.xsl" />
-<xsl:include href="formView/checkBox.xsl" />
-<xsl:include href="formView/comboBox.xsl" />
+<xsl:include href="formView/text.xsl" />
+<xsl:include href="formView/checkbox.xsl" />
+<xsl:include href="formView/file.xsl" />
+<xsl:include href="formView/datetime.xsl" />
+<xsl:include href="formView/radio.xsl" />
+<xsl:include href="formView/combobox.xsl" />
 <xsl:include href="formView/junctionTable.xsl" />
 
 
