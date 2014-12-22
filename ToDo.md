@@ -24,6 +24,16 @@
 
 ## BUGS
 
+### ExtJS 5.0.1 vs 5.1.0
+
+**[Cascaded Combo boxes]**
+	- `ExtJS 5.0`: Works with Formula fix, still UX issues:
+    	- When changing parents not seting to null children
+    	- When editing record not loading parents
+    	- ID field shown when clicked & store not loaded
+    - `ExtJS 5.1`: Works without Formula fix (dbinding: panax_record.), UX issues
+    	- GET request when selecting, disappears from UI
+
 ### MODELS & CRUD
 
 **["id" BUG (When identityProperty != "id")]**
@@ -31,6 +41,7 @@
 		- Store's id key is replaced?? why??
 		- Data's id = null. Why?
 	- Many other bugs related when identityProperty != "Id"
+
 **[MODEL]**
 	- When not identityKey (ex. some junctionTables): Concat(primary keys)
 
@@ -91,10 +102,6 @@
 ### FormView:
 
 **[Catalgos ForeignKeys (combobox)]**
-	- Cascaded Combo boxes
-		- Data bibnding issue with CHANGE and FORMULAS hacky fix
-	- Cuando persiste otro campo de cascadero (Pais, o Estado)
-		- Revisar persistencia y asociaciones
 	- Engrane (*) (catalogs with combobox)	
 		- Nuevo
 		- Actualizar
