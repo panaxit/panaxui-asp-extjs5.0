@@ -9,17 +9,20 @@
 
 	<!-- SHORT STRINGS -->
 	<xsl:template mode="formView.control" match="*[ 
-		(@controlType='default' or @controlType='password') and 
+		(@controlType='default' or @controlType='password' or @controlType='email') and 
 		(@dataType='varchar' or @dataType='nvarchar' or @dataType='nchar' or @dataType='char') and 
 		(not(@length) or @length&lt;=255) ]">
 			xtype: 'textfield',
-			<xsl:if test="@controlType='password'">
-				inputType: 'password',
-			</xsl:if>
 			name: '<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/>',
 			emptyText: '<xsl:value-of select="@fieldName"/>',
 			bind: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}',
-			enforceMaxLength: true
+			enforceMaxLength: true,
+			<xsl:if test="@controlType='password'">
+				inputType: 'password',
+			</xsl:if>
+			<xsl:if test="@controlType='email'">
+				vtype: 'email',
+			</xsl:if>
 			<!-- EDITABLE/READONLY -->
 			<xsl:call-template name="control.readOnly" />
 	</xsl:template>

@@ -121,6 +121,9 @@
 		- https://github.com/zombeerose/DateTime/tree/master/source/form/field
 		- https://github.com/NLeSC/ExtJS-DateTime
 	- READONLY: Display controls as labels?
+	
+**[Validations]**
+	- http://dev.sencha.com/ext/5.1.0/examples/kitchensink/?theme=neptune#form-advtypes
 
 ## MISCELANEOUS
 
