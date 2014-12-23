@@ -35,9 +35,6 @@
     	- GET request when selecting, disappears from UI
 **[[E] Layout run failed]**
 	- `ExtJS 5.1` in grids, windows, etc
-**[Ext.ux]**
-	- `ExtJS 5.1` Ext.ux in `examples\ux` vs `packages\ext-ux`
-		- See Color Picker controlType (color)
 
 ### MODELS & CRUD
 

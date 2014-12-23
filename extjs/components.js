@@ -12,7 +12,6 @@ Ext.ns('app');
 Ext.Loader.setPath({
     'Panax': 'app',
     'Px': 'app',
-	'Ext.ux': '../../resources/ext-5.1.0/examples/ux',
 	'app': 'custom/scripts'
 });
 
