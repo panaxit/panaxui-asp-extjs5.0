@@ -20,7 +20,8 @@ Ext.define('Px.view.thumbnails.Thumbnails', {
         this.tpl =
             '<tpl for=".">' +
                 '<div class="thumbnail-item">' +
-                    '<div class="thumbnail-icon-wrap icon-' + backgrounds[Ext.themeName] + '">' +
+                    //'<div class="thumbnail-icon-wrap icon-' + backgrounds[Ext.themeName] + '">' +
+                    '<div class="thumbnail-icon-wrap icon-border-circle">' +
                         '<div class="thumbnail-icon icon-{iconCls}"></div>' +
                     '</div>' +
                     '<div class="thumbnail-text">{text}</div>' +
