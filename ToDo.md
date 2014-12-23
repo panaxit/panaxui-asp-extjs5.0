@@ -35,6 +35,9 @@
     	- GET request when selecting, disappears from UI
 **[[E] Layout run failed]**
 	- `ExtJS 5.1` in grids, windows, etc
+**[Ext.ux]**
+	- `ExtJS 5.1` Ext.ux in `examples\ux` vs `packages\ext-ux`
+		- See Color Picker controlType (color)
 
 ### MODELS & CRUD
 
@@ -121,7 +124,7 @@
 		- https://github.com/zombeerose/DateTime/tree/master/source/form/field
 		- https://github.com/NLeSC/ExtJS-DateTime
 	- READONLY: Display controls as labels?
-	
+
 **[Validations]**
 	- http://dev.sencha.com/ext/5.1.0/examples/kitchensink/?theme=neptune#form-advtypes
 

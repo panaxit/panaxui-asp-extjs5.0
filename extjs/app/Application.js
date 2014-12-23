@@ -27,6 +27,8 @@ Ext.define('Px.Application', {
         'Panax.view.base.ImageContainer',
         'Panax.view.dataview.MultiSort',
         'Panax.view.controls.AjaxComboBox',
+        'Ext.ux.BoxReorderer',
+        'Ext.ux.colorpick.Field'
 
     ],
 

@@ -25,6 +25,7 @@
 <xsl:include href="formView/file.xsl" />
 <xsl:include href="formView/datetime.xsl" />
 <xsl:include href="formView/radio.xsl" />
+<xsl:include href="formView/color.xsl" />
 <xsl:include href="formView/combobox.xsl" />
 <xsl:include href="formView/junctionTable.xsl" />
 
