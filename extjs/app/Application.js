@@ -28,7 +28,8 @@ Ext.define('Px.Application', {
         'Panax.view.dataview.MultiSort',
         'Panax.view.controls.AjaxComboBox',
         'Ext.ux.BoxReorderer',
-        'Ext.ux.colorpick.Field'
+        'Ext.ux.colorpick.Field',
+        'Ext.ux.form.field.DateTime'
 
     ],
 
