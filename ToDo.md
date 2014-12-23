@@ -33,8 +33,10 @@
     	- ID field shown when clicked & store not loaded
     - `ExtJS 5.1`: Works without Formula fix (dbinding: panax_record.), UX issues
     	- GET request when selecting, disappears from UI
-**[[E] Layout run failed]**
-	- `ExtJS 5.1` in grids, windows, etc
+
+**[MISC]**
+	- `ExtJS 5.1` [E] Layout run failed
+		- In grids, windows, etc
 
 ### MODELS & CRUD
 

@@ -103,12 +103,26 @@
 			, unique: true
 		</xsl:if>
 		<xsl:choose>
-			<xsl:when test="@dataType='bit'">, type: 'boolean'</xsl:when>
-			<xsl:when test="@dataType='date' or @dataType='datetime' or @dataType='smalldatetime'">, type: 'date', dateFormat: 'd/m/Y'</xsl:when>
-			<xsl:when test="@dataType='float' or @dataType='money' or @dataType='smallmoney' or @dataType='float' or @dataType='decimal'">, type: 'float', minValue: 0</xsl:when>
-			<xsl:when test="@controlType"></xsl:when>
-			<xsl:when test="@dataType='identity' or @dataType='int' or @dataType='smallint' or @dataType='tinyint'">, type: 'int', minValue: 0 /*no esta funcionando*/</xsl:when>
-			<xsl:otherwise>/*<xsl:value-of select="@dataType"/>*/</xsl:otherwise>
+			<xsl:when test="@dataType='bit'">
+				, type: 'boolean'
+			</xsl:when>
+			<xsl:when test="@dataType='date' or @dataType='datetime' or @dataType='smalldatetime' or @dataType='timestamp'">
+				, type: 'date'
+				, dateFormat: 'Y/m/d H:i:s'
+			</xsl:when>
+			<xsl:when test="@dataType='time'">
+				, type: 'date'
+				, dateFormat: 'H:i'
+			</xsl:when>
+			<xsl:when test="@dataType='float' or @dataType='money' or @dataType='smallmoney' or @dataType='float' or @dataType='decimal'">
+				, type: 'float', minValue: 0
+			</xsl:when>
+			<xsl:when test="@dataType='identity' or @dataType='int' or @dataType='smallint' or @dataType='tinyint'">
+				, type: 'int', minValue: 0 /*no esta funcionando*/
+			</xsl:when>
+			<xsl:otherwise>
+				/*<xsl:value-of select="@dataType"/>*/
+			</xsl:otherwise>
 		</xsl:choose>
 		<!-- <xsl:if test="@isPrimaryKey=1 or @mode='readonly' or ancestor::*[@dataType='junctionTable']"> -->
 		<xsl:if test="@mode='readonly'">

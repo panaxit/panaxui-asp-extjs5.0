@@ -187,7 +187,8 @@
 		<!--/*1*/-->
 		<xsl:choose>
 			<xsl:when test="string(@value)!=''">
-				new Date('<xsl:value-of select="translate(@value,'-','/')"/>')
+				<!-- new Date('<xsl:value-of select="translate(@value,'-','/')"/>') -->
+				'<xsl:value-of select="translate(@value,'-','/')"/>'
 			</xsl:when>
 			<xsl:otherwise>null</xsl:otherwise>
 		</xsl:choose>
