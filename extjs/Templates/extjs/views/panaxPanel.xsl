@@ -205,7 +205,7 @@
 							controlType: "gridView"
 						}, {
 							filters: response.filters
-						});
+						});debugger;
 
 						Ext.suspendLayouts();
 

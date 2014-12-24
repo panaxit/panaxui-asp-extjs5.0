@@ -9,13 +9,8 @@ Ext.define('Panax.view.PanaxGrid', {
     , loadMask: true
     , stateful: true
     , border: true
-    , layout: {
-        type: 'vbox',       // Arrange child items vertically
-        align: 'stretch',    // Each takes up full width
-    }
     // Set a stateId so that this grid's state is persisted.
     , stateId: 'stateful-filter-grid'
-    , flex: 1
 	, initComponent: function() {
 		var me = this;
 

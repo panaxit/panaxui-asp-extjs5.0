@@ -35,8 +35,7 @@
     	- GET request when selecting, disappears from UI
 
 **[MISC]**
-	- `ExtJS 5.1` [E] Layout run failed
-		- In grids, windows, etc
+	- `ExtJS 5.1` Summaries, ViewConfig
 
 ### MODELS & CRUD
 

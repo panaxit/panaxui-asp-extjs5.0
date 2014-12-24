@@ -5,7 +5,6 @@ Ext.define('Panax.view.PanaxPanel', {
 		'Ext.form.field.Text'
 		, 'Ext.ux.statusbar.StatusBar'
 	]
-    , width: '100%'
     , height: '100%'
     , bodyPadding: 8
     , border: false
