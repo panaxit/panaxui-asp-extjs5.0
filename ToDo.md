@@ -60,6 +60,8 @@
 	- Combination of mode=filters (chequera) then remotefiltering (headers) replace original filters?
 
 **[Paging Toolbar not loaded @ start]**
+	+ Teporary fix for BUG: 
+		+ `http://www.sencha.com/forum/showthread.php?289447-Binding-a-store-to-a-pagingtoolbar-does-not-work`
 
 ### CardView
 

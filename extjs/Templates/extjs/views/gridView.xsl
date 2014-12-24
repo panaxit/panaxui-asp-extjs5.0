@@ -108,7 +108,21 @@
 		    		grid.viewConfig.showSummary = false;
 		    		summaryBar.setVisible(false);
 		    	}
-		    }
+		    },
+
+		    /**
+		     * Init
+		     */
+            init: function() {
+            	/*
+            	Temporary FIX:
+            	http://www.sencha.com/forum/showthread.php?289447-Binding-a-store-to-a-pagingtoolbar-does-not-work
+            	 */
+            	var pagingTbar = this.lookupReference('pagingtoolbar');
+            	if(pagingTbar) {
+            		pagingTbar.setStore(this.getStore('panax_record'));
+            	}
+            }
 		});
 	</xsl:template>
 
@@ -156,7 +170,7 @@
 
         viewConfig: {
 			showPagingToolbar: true
-			, pagingToolbarStore: '{panax_record<xsl:apply-templates select="." mode="storeBind"/>}'
+			//, pagingToolbarStore: '{panax_record<xsl:apply-templates select="." mode="storeBind"/>}'
 			, showSummary: false
 			<xsl:if test="/*[1]/@mode='readonly' or @mode='readonly'">
 				, isReadonly: true
