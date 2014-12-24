@@ -6,6 +6,10 @@ Ext.define('Panax.view.PanaxForm', {
 	, closable: false
     , border: true
 	, autoScroll: true
+    , layout: {
+        type: 'vbox',       // Arrange child items vertically
+        align: 'stretch',    // Each takes up full width
+    }
 	, initComponent: function() {
 		var me = this;
 

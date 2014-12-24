@@ -16,12 +16,12 @@
 			name: '<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/>',
 			emptyText: '<xsl:value-of select="@fieldName"/>',
 			bind: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}',
-			enforceMaxLength: true,
+			enforceMaxLength: true
 			<xsl:if test="@controlType='password'">
-				inputType: 'password',
+				, inputType: 'password'
 			</xsl:if>
 			<xsl:if test="@controlType='email'">
-				vtype: 'email',
+				, vtype: 'email'
 			</xsl:if>
 			<!-- EDITABLE/READONLY -->
 			<xsl:call-template name="control.readOnly" />
