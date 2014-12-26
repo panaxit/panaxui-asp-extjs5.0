@@ -15,14 +15,15 @@
 			xtype: 'textfield',
 			name: '<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/>',
 			emptyText: '<xsl:value-of select="@fieldName"/>',
-			bind: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}',
-			enforceMaxLength: true
+			bind: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}'
 			<xsl:if test="@controlType='password'">
 				, inputType: 'password'
 			</xsl:if>
 			<xsl:if test="@controlType='email'">
 				, vtype: 'email'
 			</xsl:if>
+			<!-- MAX LENGTH -->
+			<xsl:call-template name="control.maxLength" />
 			<!-- EDITABLE/READONLY -->
 			<xsl:call-template name="control.readOnly" />
 	</xsl:template>
@@ -35,8 +36,9 @@
 			xtype: 'textarea',
 			name: '<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/>',
 			emptyText: '<xsl:value-of select="@fieldName"/>',
-			bind: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}',
-			enforceMaxLength: true
+			bind: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}'
+			<!-- MAX LENGTH -->
+			<xsl:call-template name="control.maxLength" />
 			<!-- EDITABLE/READONLY -->
 			<xsl:call-template name="control.readOnly" />
 	</xsl:template>
@@ -48,8 +50,7 @@
 			xtype: 'numberfield',
 			name: '<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/>',
 			emptyText: '<xsl:value-of select="@fieldName"/>',
-			bind: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}',
-			enforceMaxLength: true
+			bind: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}'
 			<!-- EDITABLE/READONLY -->
 			<xsl:call-template name="control.readOnly" />
 	</xsl:template>
@@ -65,8 +66,7 @@
 	        decimalPrecision: 2,
 			name: '<xsl:value-of select="translate(@fieldName, $uppercase, $smallcase)"/>',
 			emptyText: '<xsl:value-of select="@fieldName"/>',
-			bind: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}',
-			enforceMaxLength: true
+			bind: '{panax_record.<xsl:apply-templates select="." mode="bindName"/>}'
 			<!-- EDITABLE/READONLY -->
 			<xsl:call-template name="control.readOnly" />
 	</xsl:template>

@@ -29,4 +29,12 @@
 		</xsl:if>
 	</xsl:template>
 
+	<!-- MAX LENGTH -->
+	<xsl:template name="control.maxLength">
+		<xsl:if test="@length and (@length&gt;0)">
+			, maxLength: <xsl:value-of select="@length"/>
+			, enforceMaxLength: true
+		</xsl:if>
+	</xsl:template>
+
 </xsl:stylesheet>
