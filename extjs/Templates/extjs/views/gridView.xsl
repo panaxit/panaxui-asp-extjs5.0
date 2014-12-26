@@ -143,6 +143,7 @@
 	<xsl:template match="*[@controlType='gridView' and @mode!='filters']" mode="PanaxPanel.MainControl">
 	{
         xtype: 'panaxgrid',
+        flex: 1,
 	    controller: '<xsl:apply-templates select="." mode="modelName"/>',
         bind: '{panax_record<xsl:apply-templates select="." mode="storeBind"/>}',
         columns: [

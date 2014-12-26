@@ -44,6 +44,8 @@
         // checkOnly: true,
 		multiSelect: true,
         height: 150,
+        flex: 1,
+        border: true,
         autoShow: true,
         autoRender: true,
     	listeners: {

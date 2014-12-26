@@ -110,13 +110,14 @@
 		<xsl:if test="position()&gt;1">,</xsl:if>
 		{
 			xtype:'tabpanel',
-			activeTab: 0,
-			border: false,
-			autoScroll: true,
+			flex: 1,
 			layout: {
 		        type: 'vbox',
 		        align: 'stretch',
 		    },
+			activeTab: 0,
+			border: false,
+			autoScroll: true,
 	        items: [<xsl:apply-templates select="px:tab" mode="formView"/>]
 		}
 	</xsl:template>
@@ -128,6 +129,7 @@
 			border: false,
 			autoScroll: true,
 			bodyPadding: '10 0 0 0',
+			flex: 1,
 			layout: {
 		        type: 'vbox',
 		        align: 'stretch',
@@ -187,6 +189,7 @@
 		<xsl:if test="position()&gt;1">,</xsl:if>
 	        xtype: 'fieldset'
 			, title: '<xsl:value-of select="@headerText"/>'
+			, flex: 1
 			, layout: {
 		        type: 'vbox',
 		        align: 'stretch',
@@ -200,6 +203,11 @@
 		<xsl:if test="position()&gt;1">,</xsl:if>
 	        xtype: 'fieldset'
 			, title: '<xsl:value-of select="@headerText"/>'
+			, flex: 1
+			, layout: {
+		        type: 'vbox',
+		        align: 'stretch',
+		    }
 	        , items: [
 	        	<xsl:apply-templates select="." mode="PanaxPanel.MainControl" />
 	        ]
@@ -213,6 +221,11 @@
 		<xsl:if test="position()&gt;1">,</xsl:if>
 	        xtype: 'fieldset'
 			, title: '<xsl:value-of select="@headerText"/>'
+			, flex: 1
+			, layout: {
+		        type: 'vbox',
+		        align: 'stretch',
+		    }
 	        , items: [{
 	        	<xsl:apply-templates select="." mode="junctionTable.MainControl" />
 	        }]
