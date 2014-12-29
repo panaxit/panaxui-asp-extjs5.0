@@ -1,10 +1,10 @@
 Ext.define('Panax.view.PanaxGrid', {
     extend: 'Ext.grid.Panel'
     , alias: 'widget.panaxgrid'
-    , plugins: [{
+    /*, plugins: [{
     	ptype: 'gridfilters',
     	menuFilterText: 'Filtros'
-    }]
+    }]*/
     , emptyText: 'No coincidieron registros'
     , loadMask: true
     , stateful: true
