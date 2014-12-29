@@ -35,7 +35,7 @@
 
 		<xsl:apply-templates select="@expanded|@expandable" mode="mapSite" />
 
-		<xsl:apply-templates select="@catalogName|@mode|@action|@url|@pageSize|@description|@controlType|@mode|@pk|@icon|@iconCls|@id" mode="mapSite.string" />
+		<xsl:apply-templates select="@catalogName|@mode|@action|@url|@pageSize|@description|@controlType|@mode|@pk|@icon|@iconCls|@id|@filters" mode="mapSite.string" />
 
 		<xsl:choose>
 			<xsl:when test="@id">

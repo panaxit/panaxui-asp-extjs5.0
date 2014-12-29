@@ -126,6 +126,12 @@ Ext.define('Px.controller.Global', {
 
         if (node) {
             console.info("Route changed: "+hash);
+            if(node.get('pk')) {
+                console.info("Route PK (filter): "+node.get('pk'));
+            } 
+            if(node.get('filters')) {
+                console.info("Route filters: "+node.get('filters'));
+            } 
             //resume action
             action.resume();
         } else {
@@ -218,7 +224,8 @@ Ext.define('Px.controller.Global', {
                 , mode: mode
                 , controlType: controlType
             },{
-                idValue: idValue
+                idValue: idValue, // A.K.A. node.get('pk')
+                filters: node.get('filters')
             });
 
             contentPanel.add(panaxCmp);
