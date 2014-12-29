@@ -65,6 +65,7 @@
 		    	 */
 		    	if(singleStore) { // formView
 			    	if(idValue) {
+			    		singleStore.setAutoLoad(false);
 						singleStore.load({ 
 							params: { filters: "[<xsl:value-of select="@identityKey"/>]="+idValue } 
 							//params: { id: idValue }
@@ -75,13 +76,14 @@
 				    }
 		    	} else if(multiStore) { // gridView
 					if (filters) {
+			    		multiStore.setAutoLoad(false);
 						multiStore.load({
 							params: {
 								filters: filters
 							}
 						});
 					} else {
-						multiStore.load();
+						// Let autoLoad run
 					}
 		    	}
 

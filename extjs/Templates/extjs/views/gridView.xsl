@@ -114,14 +114,7 @@
 		     * Init
 		     */
             init: function() {
-            	/*
-            	Temporary FIX:
-            	http://www.sencha.com/forum/showthread.php?289447-Binding-a-store-to-a-pagingtoolbar-does-not-work
-            	 */
-<!--             	var pagingTbar = this.lookupReference('pagingtoolbar');
-            	if(pagingTbar) {
-            		pagingTbar.setStore(this.getStore('panax_record'));
-            	} -->
+
             }
 		});
 	</xsl:template>
@@ -130,7 +123,7 @@
 	    stores: {
 	    	panax_record: {
 	    		model: '<xsl:apply-templates select="." mode="modelName"/>',
-	    		autoLoad: false,
+	    		autoLoad: true,
 	    		autoSync: false,
 	    		autoDestroy: true,
 	    		session: true,
@@ -171,7 +164,7 @@
 
         viewConfig: {
 			showPagingToolbar: true
-			//, pagingToolbarStore: '{panax_record<xsl:apply-templates select="." mode="storeBind"/>}'
+			, pagingToolbarStore: '{panax_record<xsl:apply-templates select="." mode="storeBind"/>}'
 			, showSummary: false
 			<xsl:if test="/*[1]/@mode='readonly' or @mode='readonly'">
 				, isReadonly: true

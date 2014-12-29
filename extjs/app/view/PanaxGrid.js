@@ -111,9 +111,9 @@ Ext.define('Panax.view.PanaxGrid', {
 	    this.dockedItems = {
 			xtype: 'pagingtoolbar',
 			reference: 'pagingtoolbar',
-			// bind: {
-			// 	store: me.viewConfig.pagingToolbarStore
-			// },
+			bind: {
+				store: me.viewConfig.pagingToolbarStore
+			},
 			dock: 'bottom',
 			hidden: !me.viewConfig.showPagingToolbar,
 			displayInfo: true,
