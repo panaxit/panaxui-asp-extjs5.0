@@ -118,10 +118,10 @@
             	Temporary FIX:
             	http://www.sencha.com/forum/showthread.php?289447-Binding-a-store-to-a-pagingtoolbar-does-not-work
             	 */
-            	var pagingTbar = this.lookupReference('pagingtoolbar');
+<!--             	var pagingTbar = this.lookupReference('pagingtoolbar');
             	if(pagingTbar) {
             		pagingTbar.setStore(this.getStore('panax_record'));
-            	}
+            	} -->
             }
 		});
 	</xsl:template>

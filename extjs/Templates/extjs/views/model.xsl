@@ -20,11 +20,8 @@
 	<!-- ToDo: Duplicated func with bindName template. Except DOTS positions, FIX -->
 	<xsl:template match="*" mode="storeBind">
 		<xsl:variable name="foreignTable" select="ancestor::*[@dataType='foreignTable' or @dataType='junctionTable'][1]"/>
-		<xsl:choose>
-			<xsl:when test="$foreignTable">.<xsl:value-of select="translate($foreignTable/@Column_Name, $uppercase, $smallcase)"/><xsl:value-of select="translate(@Column_Name, $uppercase, $smallcase)"/> </xsl:when>
-			<xsl:otherwise>
-			</xsl:otherwise>
-		</xsl:choose>
+		<xsl:variable name="nested" select="@dataType='foreignTable' or @dataType='junctionTable'"/>
+		<xsl:if test="$foreignTable"><xsl:apply-templates select="$foreignTable" mode="storeBind"/></xsl:if><xsl:if test="$nested">.</xsl:if><xsl:value-of select="translate(@Column_Name, $uppercase, $smallcase)"/>
 	</xsl:template>
 
 	<!-- ToDo: Change mode name to controlBind -->

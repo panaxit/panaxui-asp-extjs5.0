@@ -52,6 +52,7 @@
 	</xsl:template>
 
 	<xsl:template match="px:data/px:dataRow|px:fields" mode="json">
+		<xsl:variable name="parentTable" select="ancestor::*[key('fields',@fieldId)/@dataType='foreignTable' or key('fields',@fieldId)/@dataType='junctionTable']"/>
 		<xsl:if test="position()&gt;1">,</xsl:if>
 		{
 		"rowNumber":"<xsl:value-of select="@rowNumber"/>"
@@ -64,13 +65,9 @@
 			</xsl:when>
 			<xsl:otherwise>null</xsl:otherwise>
 		</xsl:choose>
-		<!--Include foreignkey for foreignTable-->
-		<xsl:if test="ancestor::*[key('fields',@fieldId)/@dataType='foreignTable']">
-			, "<xsl:value-of select="translate(ancestor::*[key('fields',@fieldId)/@dataType='foreignTable']/*[1]/@foreignReference, $uppercase, $smallcase)"/>": '<xsl:value-of select="ancestor::*[@identity][1]/@identity"/>'
-		</xsl:if>
-		<!--Include foreignkey for junctionTable-->
-		<xsl:if test="ancestor::*[key('fields',@fieldId)/@dataType='junctionTable']">
-			, "<xsl:value-of select="translate(ancestor::*[key('fields',@fieldId)/@dataType='junctionTable']/*[1]/@foreignReference, $uppercase, $smallcase)"/>": '<xsl:value-of select="ancestor::*[@identity][1]/@identity"/>'
+		<!--Include Foreign Key-->
+		<xsl:if test="$parentTable">
+			, "<xsl:value-of select="translate(ancestor::*[@dataType='table'][1]/@foreignReference, $uppercase, $smallcase)"/>": '<xsl:value-of select="ancestor::*[@identity][1]/@identity"/>'
 		</xsl:if>
 
 		<xsl:if test="ancestor::*[key('fields',@fieldId)/@dataType='junctionTable']">
