@@ -22,9 +22,17 @@
 		- tabs expandidos (ver layouts [FormView])
 		- Cc padre/Nested CardView (CC hijos)
 
-## BUGS
+## ExtJS FRAMEWORK BUGS
 
-### ExtJS 5.0.1 vs 5.1.0
+**[ExtJS 5.x]**
+	- Remote filters in combo with gridfilter plugin ignores autoLoad false
+		- `http://www.sencha.com/forum/showthread.php?292780-5.0.1-Remote-filters-in-combo-with-gridfilter-plugin-ignores-autoLoad-false`
+	+ `Fixed in ExtJS 5.1.0` Binding a store to a pagingtoolbar does not work
+		+  `http://www.sencha.com/forum/showthread.php?289447-Binding-a-store-to-a-pagingtoolbar-does-not-work`
+
+## IMPLEMENTATION BUGS
+
+### ExtJS 5.0.1 Vs 5.1.0
 
 **[Cascaded Combo boxes]**
 	- `ExtJS 5.0`: Works with Formula fix, still UX issues:
@@ -37,7 +45,7 @@
 **[MISC]**
 	- `ExtJS 5.1` Summaries, ViewConfig
 
-### MODELS & CRUD
+### MODELS & CRUD 
 
 **["id" BUG (When identityProperty != "id")]**
 	- Debug::store
@@ -58,11 +66,6 @@
 	- Ordering should/could be REMOTE as well (remoteSort=true) (ver ver12.0)
 	- 2 calls to request.asp with Remote Filters (why?)
 	- Combination of mode=filters (chequera) then remotefiltering (headers) replace original filters?
-
-**[Paging Toolbar not loaded @ start]**
-	+ Teporary fix for BUG: 
-		+ `http://www.sencha.com/forum/showthread.php?289447-Binding-a-store-to-a-pagingtoolbar-does-not-work`
-
 ### CardView
 
 **[CardView]**

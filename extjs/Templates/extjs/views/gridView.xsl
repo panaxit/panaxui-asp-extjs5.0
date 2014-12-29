@@ -123,7 +123,7 @@
 	    stores: {
 	    	panax_record: {
 	    		model: '<xsl:apply-templates select="." mode="modelName"/>',
-	    		autoLoad: true,
+	    		autoLoad: false,
 	    		autoSync: false,
 	    		autoDestroy: true,
 	    		session: true,

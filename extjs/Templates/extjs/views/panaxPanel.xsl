@@ -65,10 +65,11 @@
 		    	 */
 		    	if(singleStore) { // formView
 			    	if(idValue) {
-			    		singleStore.setAutoLoad(false);
 						singleStore.load({ 
-							params: { filters: "[<xsl:value-of select="@identityKey"/>]="+idValue } 
-							//params: { id: idValue }
+							params: { 
+								filters: "[<xsl:value-of select="@identityKey"/>]="+idValue 
+								// A.K.A. id: idValue
+							}
 						});
 				    } else {
 				    	// No record to load in store
@@ -76,14 +77,14 @@
 				    }
 		    	} else if(multiStore) { // gridView
 					if (filters) {
-			    		multiStore.setAutoLoad(false);
+						// OPEN BUG: http://www.sencha.com/forum/showthread.php?292780-5.0.1-Remote-filters-in-combo-with-gridfilter-plugin-ignores-autoLoad-false
 						multiStore.load({
 							params: {
 								filters: filters
 							}
 						});
 					} else {
-						// Let autoLoad run
+						multiStore.load();
 					}
 		    	}
 
@@ -207,7 +208,7 @@
 							controlType: "gridView"
 						}, {
 							filters: response.filters
-						});debugger;
+						});
 
 						Ext.suspendLayouts();
 
