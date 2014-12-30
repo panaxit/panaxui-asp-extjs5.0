@@ -43,8 +43,10 @@ Ext.define('Panax.view.PanaxGrid', {
 	        	menu: [{
 		        	text: 'Remotos',
 		        	checked: true
+		        	// ToDo
 		        }, {
 		        	text: 'Locales'
+		        	// ToDo
 		        }, {
 		            text:'Borrar',
 		            handler: 'onClearFiltersClick'
@@ -54,23 +56,27 @@ Ext.define('Panax.view.PanaxGrid', {
        			//glyph: 83,
 	        	menu: [{
 		            text:'Mostrar',
-		            checked: true,
 		        	menu: [{
 			            text:'10 Registros',
-			            checked: true
+			            pageSize: 10,
+			            handler: 'onTogglePagingToolbar'
 			        },{
 			            text:'25 Registros',
-		            	checked: false
+			            pageSize: 25,
+			            handler: 'onTogglePagingToolbar'
 			        },{
 			            text:'50 Registros',
-		            	checked: false
+			            pageSize: 50,
+			            handler: 'onTogglePagingToolbar'
 			        },{
 			            text:'100 Registros',
-		            	checked: false
+			            pageSize: 100,
+			            handler: 'onTogglePagingToolbar'
 		        	}],
 		        },{
 		            text:'No Mostrar',
-		            checked: false
+		            pageSize: 0,
+					handler: 'onTogglePagingToolbar'
 	        	}],
 	        }, {
 		    	text: 'Funciones',
@@ -112,10 +118,10 @@ Ext.define('Panax.view.PanaxGrid', {
 			xtype: 'pagingtoolbar',
 			reference: 'pagingtoolbar',
 			bind: {
-				store: me.viewConfig.pagingToolbarStore
+				store: me.viewConfig.paging.store
 			},
 			dock: 'bottom',
-			hidden: !me.viewConfig.showPagingToolbar,
+			hidden: !me.viewConfig.paging.show,
 			displayInfo: true,
 			displayMsg: 'Registros {0} - {1} de {2}',
 			emptyMsg: "No hay registros",
@@ -138,7 +144,7 @@ Ext.define('Panax.view.PanaxGrid', {
 	        /*
 	        BUG: showSummaryRow ignored: http://www.sencha.com/forum/showthread.php?261234-showSummaryRow-in-summary-feature&p=1080417#post1080417
 	         */
-	        showSummaryRow: me.viewConfig.showSummary
+	        showSummaryRow: me.viewConfig.summary.show
 	    };
 	    
 	    /*

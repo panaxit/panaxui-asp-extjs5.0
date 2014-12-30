@@ -93,7 +93,7 @@
 		    },
 
 		    /**
-		     * Toggle summaries
+		     * Toggle Summary Row
 		     * @param  {Object} widget Object that fired the event
 		     * @param  {[type]} opts   [description]
 		     */
@@ -102,12 +102,32 @@
 		    		summaryBar = grid.getDockedItems('component[itemId=summaryBar]')[0];
 
 		    	if(item.summaryType) {
-		    		grid.viewConfig.showSummary = true;
+		    		grid.viewConfig.summary.show = true;
 		    		summaryBar.setVisible(true);
 		    	} else {
-		    		grid.viewConfig.showSummary = false;
+		    		grid.viewConfig.summary.show = false;
 		    		summaryBar.setVisible(false);
 		    	}
+		    },
+
+		    /**
+		     * Toggle Paging Toolbar
+		     * @param  {Object} widget Object that fired the event
+		     * @param  {[type]} opts   [description]
+		     */
+		    onTogglePagingToolbar: function(item, e) {
+		    	var grid = this.getView(),
+		    		store = grid.getStore(),
+		    		pagingToolbar = grid.getDockedItems('component[reference=pagingtoolbar]')[0];
+
+		    	if(item.pageSize) {
+		    		pagingToolbar.show();
+		    	} else {
+		    		pagingToolbar.hide();
+		    	}
+		    	
+	    		store.setPageSize(item.pageSize);
+	    		store.reload();
 		    },
 
 		    /**
@@ -163,9 +183,13 @@
         ],
 
         viewConfig: {
-			showPagingToolbar: true
-			, pagingToolbarStore: '{panax_record<xsl:apply-templates select="." mode="storeBind"/>}'
-			, showSummary: false
+        	paging: {
+        		show: true,
+        		store: '{panax_record<xsl:apply-templates select="." mode="storeBind"/>}'
+        	},
+			summary: {
+				show: false
+			}
 			<xsl:if test="/*[1]/@mode='readonly' or @mode='readonly'">
 				, isReadonly: true
 			</xsl:if>
