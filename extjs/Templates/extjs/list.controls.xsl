@@ -29,5 +29,12 @@
 <xsl:include href="formView/combobox.xsl" />
 <xsl:include href="formView/junctionTable.xsl" />
 
+<xsl:include href="views/formView.filters.xsl" />
+
+
+
+	<xsl:template mode="field_id" match="*">
+		<xsl:value-of select="concat('field_', name(.), '_', generate-id(.))"/>
+	</xsl:template>
 
 </xsl:stylesheet>
