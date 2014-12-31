@@ -80,12 +80,13 @@
 				xtype: 'button',
 				icon: null,
 				glyph: 42,
+				ui: 'default-toolbar',
 		        menu: [{
-		            text:'Menu Item 1'
+		            text:'ToDo 1'
 		        },{
-		            text:'Menu Item 2'
+		            text:'ToDo 2'
 		        },{
-		            text:'Menu Item 3'
+		            text:'ToDo 3'
 		        }]
 				<!-- EDITABLE/READONLY -->
 				<xsl:call-template name="control.readOnly" />
