@@ -89,13 +89,10 @@
 	    }
 	</xsl:template>
 
-	<xsl:template match="*[@controlType='formView']" mode="PanaxPanel.MainControl">
+	<xsl:template match="*[@controlType='formView' and @mode!='filters']" mode="PanaxPanel.MainControl">
 	{
     	xtype: 'panaxform',
 	    controller: '<xsl:apply-templates select="." mode="modelName"/>',
-	    <xsl:if test="@mode='filters'">
-	    	title: 'Filtros',
-	    </xsl:if>
     	items: [
 			<xsl:apply-templates select="." mode="Form.Layout"/>
     	]
@@ -229,14 +226,6 @@
 	        , items: [{
 	        	<xsl:apply-templates select="." mode="junctionTable.MainControl" />
 	        }]
-	</xsl:template>
-
-
-
-
-
-	<xsl:template mode="field_id" match="*">
-		<xsl:value-of select="concat('field_', name(.), '_', generate-id(.))"/>
 	</xsl:template>
 
 

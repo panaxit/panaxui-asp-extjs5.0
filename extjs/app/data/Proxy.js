@@ -12,12 +12,12 @@ Ext.define('Panax.data.Proxy', {
 	, settings: {
 		catalogName: undefined
 		, lang: undefined
-		, filters: undefined
+		//, filters: undefined
 		, identityKey: undefined
 		, primaryKey: undefined
 		, mode: undefined
-		, view: undefined
-		, identity: undefined
+		//, view: undefined
+		//, identity: undefined
 	}
 	, constructor: function(configuration) {
         var me = this; 
@@ -26,7 +26,7 @@ Ext.define('Panax.data.Proxy', {
 			extraParams: {
 				catalogName: me.config.settings.catalogName
 				, lang: me.config.settings.lang
-				, filters: me.config.settings.filters
+				//, filters: me.config.settings.filters
 				, identityKey: me.config.settings.identityKey
 				, primaryKey: me.config.settings.primaryKey
 				, mode: me.config.settings.mode

@@ -4,7 +4,6 @@
 	xmlns:str="http://exslt.org/str"
 	extension-element-prefixes="str"
 >
-
 	<!-- First  table is the main panel-->
 	<xsl:template match="*[1]" mode="PanaxPanel.MainPanel">
 		/*************************
@@ -31,7 +30,7 @@
 		    // Create a session for this view
 		    session: true,
 		    config: {
-		    	<!-- showStatusBar: ("<xsl:value-of select="@mode"/>"!="filters")?true:false -->
+		    	showStatusBar: ("<xsl:value-of select="@mode"/>"!="filters")?true:false,
 		    	mode: '<xsl:value-of select="@mode"/>'
 		    },
 		    items: [
@@ -196,30 +195,14 @@
 					records: [record],
 					callback: function(records, operation, success) {
 						var response = Ext.JSON.decode(operation.getResponse().responseText);
-						var contentPanel = me.getView().up('contentpanel'),
-							panaxCmp;
+						var resultsPanel = me.getView().down('#filters_results'),
+							resultsStore = resultsPanel.down('panaxgrid').getStore();
 
-						panaxCmp = Panax.getPanaxComponent({
-							prefix: "Cache.app",
-							dbId: "<xsl:value-of select="@dbId "/>",
-							lang: "<xsl:value-of select="@xml:lang "/>",
-							catalogName: "<xsl:value-of select="@Table_Schema "/>.<xsl:value-of select="@Table_Name "/>",
-							mode: "readonly",
-							controlType: "gridView"
-						}, {
-							filters: response.filters
+						resultsStore.reload({
+							params: {
+								filters: response.filters
+							}
 						});
-
-						Ext.suspendLayouts();
-
-						this.panaxWindow = new Panax.view.PanaxWindow({
-							title: "Resultados",
-							items: [panaxCmp]
-						});
-
-						this.panaxWindow.show();
-
-						Ext.resumeLayouts(true);
 					}
 				});
 		    },

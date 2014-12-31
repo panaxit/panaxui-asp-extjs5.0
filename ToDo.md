@@ -7,16 +7,14 @@
 **[Chequera]**
 	+ Operaciones: Ingresos/Egresos/Transferencias
 	- Chequera
-		- vista filters
-			- Busqueda (formView/filters)
+		~ vista filters
+			~ Busqueda (formView/filters)
 				- datetime CONTROL (ver primero: [Fields] ABSTRACCION FieldContainer)
 				- Opciones: >, >=, <, <=, =, BETWEEN, LIKE
-			- busqueda y resultados en misma pagina (iframe, u otro panel con su jerarquia?)
 
 **[Centros de Costos]**
 	- cardView: `Ex. http://sincodb/sincodev/`
 		- Filters (sliders, checkboxes, etc) like cellphones example
-		- Nested in formView (apply-templates)
 	- formview:
 		- imagefield
 		- tabs expandidos (ver layouts [FormView])
@@ -64,12 +62,6 @@
 **[REMOTE filters]**
 	- payload `filter` compuesto (ver ver12.0)
 	- Ordering should/could be REMOTE as well (remoteSort=true) (ver ver12.0)
-	- 2 calls to request.asp with Remote Filters (why?)
-	- Combination of mode=filters (chequera) then remotefiltering (headers) replace original filters?
-### CardView
-
-**[CardView]**
-	- onEditRecordClick not loading nested grids (Logs, etc... )
 
 ### UI
 
@@ -80,6 +72,7 @@
 
 **[FormView]**
 	- Fix tabs layouts: junctionTables and hasMany-foreignTables default in a separated tab, otherwise in fieldset with maxHeightsessions?
+	- READONLY: Some fields are not shown
 
 **[SHELL]**
 	- Menu.asp : Global.js - ID for Navigation node not Title, but unique ID
@@ -107,6 +100,11 @@
 	- Second request.asp controlType === `formView` (ask Uriel)
 
 ### FormView:
+
+**[FILTERS]**
+	~ FormView.FILTERS.xsl - Nested Results (still BUGGY)
+		~ OPTION 1 (Enabled): GridView - Panax.getPanaxComponent
+		~ OPTION 2 (Disabled): XSL PanaxGrid Template "Filters.ResultsGrid"
 
 **[Catalgos ForeignKeys (combobox)]**
 	- Engrane (*) (catalogs with combobox)	
