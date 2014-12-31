@@ -20,9 +20,9 @@
 
 		    /**
 		     * Show formView window for record
-		     * @param  {Object} record Selected record
+		     * @param  {String} Record ID of Selected record
 		     */
-		    createPanaxWindow: function(record) {
+		    createPanaxWindow: function(record_id) {
        			var panaxCmp;
 
 				panaxCmp = Panax.getPanaxComponent({
@@ -30,16 +30,16 @@
 					dbId: "<xsl:value-of select="@dbId "/>",
 					lang: "<xsl:value-of select="@xml:lang "/>",
 					catalogName: "<xsl:value-of select="@Table_Schema "/>.<xsl:value-of select="@Table_Name "/>",
-					mode: ("<xsl:value-of select="@mode "/>" === "readonly") ? "readonly" : (record ? "edit" : "insert"),
+					mode: ("<xsl:value-of select="@mode "/>" === "readonly") ? "readonly" : (record_id ? "edit" : "insert"),
 					controlType: "formView"
 				}, {
-					idValue: record ? record.id : null
+					idValue: record_id ? record_id : null
 				});
 
 				Ext.suspendLayouts();
 
 				this.panaxWindow = new Panax.view.PanaxWindow({
-					title: ("<xsl:value-of select="@mode "/>" === "readonly") ? "Ver" : (record ? "Editar" : "Nuevo"),
+					title: ("<xsl:value-of select="@mode "/>" === "readonly") ? "Ver" : (record_id ? "Editar" : "Nuevo"),
 					items: [panaxCmp]
 				});
 
@@ -53,8 +53,9 @@
 		     * @param  {Object} button Clicked button
 		     */
 			onEditRecordClick: function(button) {
+				debugger;
 				var record = button.dataViewRecord ? button.dataViewRecord : button.getWidgetRecord();
-				this.createPanaxWindow(record);
+				this.createPanaxWindow(record.data.id);
 			},
 
 			/**
